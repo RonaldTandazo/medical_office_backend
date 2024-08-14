@@ -1,6 +1,6 @@
-package repository;
+package com.example.proyecto_citas_medicas.repository;
 
-import entities.Role;
+import com.example.proyecto_citas_medicas.entities.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
