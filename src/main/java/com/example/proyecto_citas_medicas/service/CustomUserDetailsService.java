@@ -1,35 +1,41 @@
-package service;
+package com.example.proyecto_citas_medicas.service;
 
-import entities.User;
+import com.example.proyecto_citas_medicas.entities.User;
+import com.example.proyecto_citas_medicas.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import repository.UserRepository;
+
+import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private static final Logger logger = LoggerFactory.getLogger(CustomUserDetailsService.class);
-
-    private final UserRepository userRepository;
-
-    public CustomUserDetailsService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        logger.debug("Attempting to load user with username: {}", username);
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> {
-                    logger.warn("User not found with username: {}", username);
-                    return new UsernameNotFoundException("User not found");
-                });
+        // Buscar el usuario por nombre de usuario
+        Optional<User> userOptional = userRepository.findByUsername(username);
 
-        logger.debug("User found: {}", user.getUsername());
-        return user;
+        // Manejar el caso en que el usuario no se encuentra
+        if (userOptional.isEmpty()) {
+            throw new UsernameNotFoundException("User not found");
+        }
+
+        // Obtener el usuario de la envoltura Optional
+        User user = userOptional.get();
+
+        // Devolver un UserDetails con la información del usuario
+        // Nota: Utilizamos una contraseña dummy ya que la contraseña no será validada
+        return new org.springframework.security.core.userdetails.User(
+                user.getUsername(),
+                "dummy", // Contraseña dummy, no se valida
+                new ArrayList<>()
+        );
     }
 }
