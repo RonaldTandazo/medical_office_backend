@@ -1,9 +1,9 @@
-package controller;
+package com.example.proyecto_citas_medicas.controller;
 
-import entities.Transaccion;
+import com.example.proyecto_citas_medicas.entities.Transaccion;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.TransaccionService;
+import com.example.proyecto_citas_medicas.service.TransaccionService;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,6 +1,6 @@
-package repository;
+package com.example.proyecto_citas_medicas.repository;
 
-import entities.Colaborador;
+import com.example.proyecto_citas_medicas.entities.Colaborador;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
