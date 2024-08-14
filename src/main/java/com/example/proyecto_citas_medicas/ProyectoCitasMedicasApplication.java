@@ -9,5 +9,4 @@ public class ProyectoCitasMedicasApplication {
     public static void main(String[] args) {
         SpringApplication.run(ProyectoCitasMedicasApplication.class, args);
     }
-
 }
