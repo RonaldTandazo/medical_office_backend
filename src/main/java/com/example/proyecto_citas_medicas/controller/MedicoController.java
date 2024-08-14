@@ -1,9 +1,9 @@
-package controller;
+package com.example.proyecto_citas_medicas.controller;
 
-import entities.Medico;
+import com.example.proyecto_citas_medicas.entities.Medico;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.MedicoService;
+import com.example.proyecto_citas_medicas.service.MedicoService;
 
 import java.util.List;
 import java.util.Optional;
