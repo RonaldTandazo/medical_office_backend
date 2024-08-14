@@ -1,8 +1,8 @@
-package service;
+package com.example.proyecto_citas_medicas.service;
 
-import entities.LibroDiario;
+import com.example.proyecto_citas_medicas.entities.LibroDiario;
 import org.springframework.stereotype.Service;
-import repository.LibroDiarioRepository;
+import com.example.proyecto_citas_medicas.repository.LibroDiarioRepository;
 
 import java.time.LocalDate;
 import java.util.List;

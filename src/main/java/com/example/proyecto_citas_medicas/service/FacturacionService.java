@@ -1,8 +1,8 @@
-package service;
+package com.example.proyecto_citas_medicas.service;
 
-import entities.Facturacion;
+import com.example.proyecto_citas_medicas.entities.Facturacion;
 import org.springframework.stereotype.Service;
-import repository.FacturacionRepository;
+import com.example.proyecto_citas_medicas.repository.FacturacionRepository;
 
 import java.util.List;
 import java.util.Optional;

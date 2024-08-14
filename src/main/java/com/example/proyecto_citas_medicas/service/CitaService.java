@@ -1,8 +1,8 @@
-package service;
+package com.example.proyecto_citas_medicas.service;
 
-import entities.Cita;
+import com.example.proyecto_citas_medicas.entities.Cita;
 import org.springframework.stereotype.Service;
-import repository.CitaRepository;
+import com.example.proyecto_citas_medicas.repository.CitaRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;

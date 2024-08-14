@@ -1,8 +1,8 @@
-package service;
+package com.example.proyecto_citas_medicas.service;
 
-import entities.Colaborador;
+import com.example.proyecto_citas_medicas.entities.Colaborador;
 import org.springframework.stereotype.Service;
-import repository.ColaboradorRepository;
+import com.example.proyecto_citas_medicas.repository.ColaboradorRepository;
 
 import java.util.List;
 import java.util.Optional;

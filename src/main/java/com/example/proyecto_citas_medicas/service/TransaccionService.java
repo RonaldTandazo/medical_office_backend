@@ -1,8 +1,8 @@
-package service;
+package com.example.proyecto_citas_medicas.service;
 
-import entities.Transaccion;
+import com.example.proyecto_citas_medicas.entities.Transaccion;
 import org.springframework.stereotype.Service;
-import repository.TransaccionRepository;
+import com.example.proyecto_citas_medicas.repository.TransaccionRepository;
 
 import java.time.LocalDate;
 import java.util.List;

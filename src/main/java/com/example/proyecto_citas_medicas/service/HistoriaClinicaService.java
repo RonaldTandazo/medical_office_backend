@@ -1,8 +1,8 @@
-package service;
+package com.example.proyecto_citas_medicas.service;
 
-import entities.HistoriaClinica;
+import com.example.proyecto_citas_medicas.entities.HistoriaClinica;
 import org.springframework.stereotype.Service;
-import repository.HistoriaClinicaRepository;
+import com.example.proyecto_citas_medicas.repository.HistoriaClinicaRepository;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,8 +1,8 @@
-package service;
+package com.example.proyecto_citas_medicas.service;
 
-import entities.Paciente;
+import com.example.proyecto_citas_medicas.entities.Paciente;
 import org.springframework.stereotype.Service;
-import repository.PacienteRepository;
+import com.example.proyecto_citas_medicas.repository.PacienteRepository;
 import java.util.List;
 import java.util.Optional;
 

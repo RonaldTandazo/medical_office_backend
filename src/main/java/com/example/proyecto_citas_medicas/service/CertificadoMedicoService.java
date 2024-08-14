@@ -1,8 +1,8 @@
-package service;
+package com.example.proyecto_citas_medicas.service;
 
-import entities.CertificadoMedico;
+import com.example.proyecto_citas_medicas.entities.CertificadoMedico;
 import org.springframework.stereotype.Service;
-import repository.CertificadoMedicoRepository;
+import com.example.proyecto_citas_medicas.repository.CertificadoMedicoRepository;
 
 import java.util.List;
 import java.util.Optional;

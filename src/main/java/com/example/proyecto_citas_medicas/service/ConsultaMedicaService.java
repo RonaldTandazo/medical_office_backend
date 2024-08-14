@@ -1,8 +1,8 @@
-package service;
+package com.example.proyecto_citas_medicas.service;
 
-import entities.ConsultaMedica;
+import com.example.proyecto_citas_medicas.entities.ConsultaMedica;
 import org.springframework.stereotype.Service;
-import repository.ConsultaMedicaRepository;
+import com.example.proyecto_citas_medicas.repository.ConsultaMedicaRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
