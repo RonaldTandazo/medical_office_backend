@@ -1,4 +1,4 @@
-package entities;
+package com.example.proyecto_citas_medicas.entities;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
@@ -21,9 +21,7 @@ public class CertificadoMedico {
 
     private LocalDate fechaEmision;
 
-    @Lob
     private String descripcion;
-
     private String observaciones;
 
     // Getters y Setters

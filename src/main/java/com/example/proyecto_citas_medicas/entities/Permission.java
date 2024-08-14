@@ -1,4 +1,4 @@
-package entities;
+package com.example.proyecto_citas_medicas.entities;
 
 import jakarta.persistence.*;
 import java.util.Set;

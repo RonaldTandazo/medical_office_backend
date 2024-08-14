@@ -1,4 +1,4 @@
-package entities;
+package com.example.proyecto_citas_medicas.entities;
 
 import jakarta.persistence.*;
 
@@ -22,10 +22,7 @@ public class ConsultaMedica {
 
     private LocalDateTime fechaHora;
 
-    @Lob
     private String diagnostico;
-
-    @Lob
     private String tratamiento;
 
     // Getters y Setters
