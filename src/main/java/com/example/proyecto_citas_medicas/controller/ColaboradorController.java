@@ -1,9 +1,9 @@
-package controller;
+package com.example.proyecto_citas_medicas.controller;
 
-import entities.Colaborador;
+import com.example.proyecto_citas_medicas.entities.Colaborador;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.ColaboradorService;
+import com.example.proyecto_citas_medicas.service.ColaboradorService;
 
 import java.util.List;
 import java.util.Optional;

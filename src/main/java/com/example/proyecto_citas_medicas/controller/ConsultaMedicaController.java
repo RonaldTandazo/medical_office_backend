@@ -1,9 +1,9 @@
-package controller;
+package com.example.proyecto_citas_medicas.controller;
 
-import entities.ConsultaMedica;
+import com.example.proyecto_citas_medicas.entities.ConsultaMedica;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.ConsultaMedicaService;
+import com.example.proyecto_citas_medicas.service.ConsultaMedicaService;
 
 import java.time.LocalDateTime;
 import java.util.List;

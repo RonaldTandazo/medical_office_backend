@@ -1,10 +1,10 @@
-package controller;
+package com.example.proyecto_citas_medicas.controller;
 
-import entities.GeneralParameter;
+import com.example.proyecto_citas_medicas.entities.GeneralParameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.web.bind.annotation.*;
-import repository.GeneralParameterRepository;
+import com.example.proyecto_citas_medicas.repository.GeneralParameterRepository;
 
 import java.util.HashMap;
 import java.util.List;

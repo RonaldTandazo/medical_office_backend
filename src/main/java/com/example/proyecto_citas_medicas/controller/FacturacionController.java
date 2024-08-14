@@ -1,9 +1,9 @@
-package controller;
+package com.example.proyecto_citas_medicas.controller;
 
-import entities.Facturacion;
+import com.example.proyecto_citas_medicas.entities.Facturacion;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.FacturacionService;
+import com.example.proyecto_citas_medicas.service.FacturacionService;
 
 import java.util.List;
 import java.util.Optional;

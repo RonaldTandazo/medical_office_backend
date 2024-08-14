@@ -1,9 +1,9 @@
-package controller;
+package com.example.proyecto_citas_medicas.controller;
 
-import entities.ComprobanteVenta;
+import com.example.proyecto_citas_medicas.entities.ComprobanteVenta;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.ComprobanteVentaService;
+import com.example.proyecto_citas_medicas.service.ComprobanteVentaService;
 
 import java.time.LocalDate;
 import java.util.List;
