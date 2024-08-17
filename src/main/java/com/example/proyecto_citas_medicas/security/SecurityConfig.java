@@ -30,7 +30,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // Desactiva la protección CSRF
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/public/**", "/api/**").permitAll() // Permite el acceso a todas las rutas que comiencen con /public/
+                        .requestMatchers("/public/**", "/api/**git").permitAll() // Permite el acceso a todas las rutas que comiencen con /public/
                         .anyRequest().authenticated() // Requiere autenticación para cualquier otra ruta
                 )
                 .formLogin(form -> {
