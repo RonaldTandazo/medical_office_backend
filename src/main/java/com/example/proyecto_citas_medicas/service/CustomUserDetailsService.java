@@ -1,5 +1,6 @@
 package com.example.proyecto_citas_medicas.service;
 
+import com.example.proyecto_citas_medicas.entities.Paciente;
 import com.example.proyecto_citas_medicas.entities.User;
 import com.example.proyecto_citas_medicas.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +38,9 @@ public class CustomUserDetailsService implements UserDetailsService {
                 "dummy", // Contraseña dummy, no se valida
                 new ArrayList<>()
         );
+    }
+
+    public User saveUser(User user) {
+        return userRepository.save(user);
     }
 }
