@@ -29,12 +29,12 @@ public class UserController {
             User savedUser = customUserDetailsService.saveUser(user);
             System.out.println(savedUser);
             // Respuesta de éxito
-            return ResponseEntity.ok(new ApiResponse(true, "Usuario registrado exitosamente", savedUser));
+            return ResponseEntity.ok(new ApiResponse(true, "Usuario registrado exitosamente", savedUser, 200));
         } catch (Exception e) {
             System.out.println("entro aqui en el catch");
             // Manejo de excepciones y respuesta de error
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(new ApiResponse(false, "Error al registrar el usuario: " + e.getMessage(), null));
+                    .body(new ApiResponse(false, "Error al registrar el usuario: " + e.getMessage(), null, 404));
         }
     }
 }

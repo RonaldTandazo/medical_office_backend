@@ -12,15 +12,11 @@ public class Permission {
 
     private String name;
 
-    @ManyToMany(mappedBy = "permissions")
-    private Set<Role> roles;
 
     // Getters y Setters
-
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -28,16 +24,7 @@ public class Permission {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
     }
 }

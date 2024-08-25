@@ -1,6 +1,8 @@
 package com.example.proyecto_citas_medicas.entities;
 
 import jakarta.persistence.*;
+
+import java.math.BigInteger;
 import java.util.Set;
 
 @Entity
@@ -8,51 +10,36 @@ import java.util.Set;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private BigInteger role_id;
     private String name;
 
-    @ManyToMany(mappedBy = "roles")
-    private Set<User> users;
-
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "role_permissions",
-            joinColumns = @JoinColumn(name = "role_id"),
-            inverseJoinColumns = @JoinColumn(name = "permission_id"))
-    private Set<Permission> permissions;
-
-    // Getters y Setters
-
-    public Long getId() {
-        return id;
+    @Override
+    public String toString() {
+        return "Rol{" +
+            "role_id=" + role_id +
+            ", name='" + name + '\'' +
+        '}';
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    // Getters y Setters
+    public BigInteger getId() {
+        return role_id;
+    }
+    public void setId(BigInteger role_id) {
+        this.role_id = role_id;
     }
 
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public Set<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(Set<User> users) {
-        this.users = users;
-    }
-
-    public Set<Permission> getPermissions() {
-        return permissions;
-    }
-
-    public void setPermissions(Set<Permission> permissions) {
-        this.permissions = permissions;
+    // Interfaz interna RoleProjection
+    public interface RoleProjection {
+        BigInteger getRole_id();
+        String getName();
     }
 }
 
