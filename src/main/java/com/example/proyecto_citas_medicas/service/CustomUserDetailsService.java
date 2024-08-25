@@ -2,6 +2,7 @@ package com.example.proyecto_citas_medicas.service;
 
 import com.example.proyecto_citas_medicas.entities.Role;
 import com.example.proyecto_citas_medicas.entities.User;
+import com.example.proyecto_citas_medicas.entities.UserTokens;
 import com.example.proyecto_citas_medicas.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,6 +53,18 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     public List<Role.RoleProjection> getUserRoles(BigInteger user_id) {
         return userRepository.findByRolesByUserId(user_id);
+    }
+
+    public Optional<UserTokens.UsersTokensProjection> findUserToken(BigInteger user_id){
+        return userRepository.findUserTokenByUserId(user_id);
+    }
+
+    public Optional<UserTokens> storeItem(BigInteger user_id, String reset_token){
+        return userRepository.insertItem(user_id, reset_token);
+    }
+
+    public Optional<UserTokens> updateUserToken(BigInteger user_token_id, String reset_token){
+        return userRepository.updateUserResetToken(user_token_id, reset_token);
     }
 
     public User saveUser(User user) {
