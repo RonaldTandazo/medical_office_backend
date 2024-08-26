@@ -59,12 +59,22 @@ public class CustomUserDetailsService implements UserDetailsService {
         return userRepository.findUserTokenByUserId(user_id);
     }
 
-    public Optional<UserTokens> storeItem(BigInteger user_id, String reset_token){
+    public Optional<UserTokens.UsersTokensProjection> storeItem(BigInteger user_id, String reset_token){
         return userRepository.insertItem(user_id, reset_token);
     }
 
-    public Optional<UserTokens> updateUserToken(BigInteger user_token_id, String reset_token){
+    public Optional<UserTokens.UsersTokensProjection> updateUserToken(BigInteger user_token_id, String reset_token){
+        logger.info(user_token_id.toString());
+        logger.info(reset_token);
         return userRepository.updateUserResetToken(user_token_id, reset_token);
+    }
+
+    public Optional<UserTokens.UsersTokensProjection> findUserByToken(String reset_token){
+        return userRepository.findUserByToken(reset_token);
+    }
+
+    public Optional<User> updatePassword(BigInteger user_id, String new_password){
+        return userRepository.updatePassword(user_id, new_password);
     }
 
     public User saveUser(User user) {

@@ -1,7 +1,7 @@
 package com.example.proyecto_citas_medicas.controller;
 
 import com.example.proyecto_citas_medicas.entities.*;
-import com.example.proyecto_citas_medicas.repository.UserRepository;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.example.proyecto_citas_medicas.service.CustomUserDetailsService;
 import com.example.proyecto_citas_medicas.service.EmailService;
 import org.slf4j.Logger;
@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigInteger;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -19,12 +20,12 @@ public class UserController {
     private final CustomUserDetailsService userService;
     private final EmailService emailService;
     private static final Logger logger = LoggerFactory.getLogger(UserRolesController.class);
-    private final UserRepository userRepository;
+    private final BCryptPasswordEncoder bcryptEncoder;
 
-    public UserController(CustomUserDetailsService customUserDetailsService, EmailService emailService, UserRepository userRepository) {
+    public UserController(CustomUserDetailsService customUserDetailsService, EmailService emailService, BCryptPasswordEncoder bcryptEncoder) {
         this.userService = customUserDetailsService;
         this.emailService = emailService;
-        this.userRepository = userRepository;
+        this.bcryptEncoder = bcryptEncoder;
     }
 
     @PostMapping("/register")
@@ -44,7 +45,7 @@ public class UserController {
         try {
             Optional<User> verifyUser = userService.getUserByEmail(user.getEmail());
 
-            if(!verifyUser.isPresent()){
+            if(verifyUser.isEmpty()){
                 return ResponseEntity.ok(new ApiResponse(true, "User Not Found", null, 303));
             }
 
@@ -52,13 +53,13 @@ public class UserController {
             emailService.sendPasswordResetEmail(user.getEmail(), token);
 
             Optional<UserTokens.UsersTokensProjection> find_item = userService.findUserToken(verifyUser.get().getId());
-            if(!find_item.isPresent()){
-                Optional<UserTokens> store_token = userService.storeItem(verifyUser.get().getId(), token);
+            if(find_item.isEmpty()){
+                Optional<UserTokens.UsersTokensProjection> store_token = userService.storeItem(verifyUser.get().getId(), token);
             }
 
-            Optional<UserTokens> update_item = userService.updateUserToken(find_item.get().getUser_token_id(), token);
+            Optional<UserTokens.UsersTokensProjection> update_item = userService.updateUserToken(find_item.get().getUser_token_id(), token);
 
-            return ResponseEntity.ok(new ApiResponse(true, "Email Send", null, 200));
+            return ResponseEntity.ok(new ApiResponse(true, "Recover Password Email Send", null, 200));
         } catch (Exception e) {
             String className = this.getClass().getName();
             String methodName = new Throwable().getStackTrace()[0].getMethodName();
@@ -72,11 +73,19 @@ public class UserController {
     @PostMapping("/reset_password")
     public ResponseEntity<ApiResponse> reset_password(@RequestParam String token, @RequestBody PasswordReset request) {
         try {
-            logger.info("token: "+token);
-            logger.info("New Password: "+request.getNewPassword());
-            logger.info("Confirm Password: "+request.getConfirmPassword());
+            Optional<UserTokens.UsersTokensProjection> user = userService.findUserByToken(token);
+            if (user.isEmpty()) {
+                return ResponseEntity.ok(new ApiResponse(true, "Expired Link", null, 303));
+            }
 
-            return ResponseEntity.ok(new ApiResponse(true, "User Found!!!", null, 200));
+
+            String password_crypted = bcryptEncoder.encode(request.getNewPassword());
+            Optional<User> updatePassword = userService.updatePassword(user.get().getUser_id(), password_crypted);
+
+            BigInteger user_token_id = user.get().getUser_token_id();
+            Optional<UserTokens.UsersTokensProjection> update_item = userService.updateUserToken(user_token_id, null);
+
+            return ResponseEntity.ok(new ApiResponse(true, "Password Reset", null, 200));
         } catch (Exception e) {
             String className = this.getClass().getName();
             String methodName = new Throwable().getStackTrace()[0].getMethodName();

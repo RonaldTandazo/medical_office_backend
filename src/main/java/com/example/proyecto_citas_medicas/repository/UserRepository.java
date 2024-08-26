@@ -27,9 +27,15 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query(value = "Select * from users_tokens Where status = 'A' and user_id = :user_id", nativeQuery = true)
     Optional<UserTokens.UsersTokensProjection> findUserTokenByUserId(@Param("user_id") BigInteger user_id);
 
-    @Query(value = "Insert into users_tokens (user_id, reset_token, status) values (:user_id, :reset_token, 'A')", nativeQuery = true)
-    Optional<UserTokens> insertItem(@Param("user_id") BigInteger user_id, @Param("reset_token") String reset_token);
+    @Query(value = "Insert into users_tokens (user_id, reset_token, status) values (:user_id, :reset_token, 'A') Returning user_token_id, user_id, reset_token, login_token, status", nativeQuery = true)
+    Optional<UserTokens.UsersTokensProjection> insertItem(@Param("user_id") BigInteger user_id, @Param("reset_token") String reset_token);
 
-    @Query(value = "Update users_tokens set reset_token = :reset_token where status = 'A' and user_token_id = :user_token_id", nativeQuery = true)
-    Optional<UserTokens> updateUserResetToken(@Param("user_token_id") BigInteger user_token_id, @Param("reset_token") String reset_token);
+    @Query(value = "Update users_tokens set reset_token = :reset_token where status = 'A' and user_token_id = :user_token_id returning user_token_id, user_id, reset_token, login_token, status", nativeQuery = true)
+    Optional<UserTokens.UsersTokensProjection> updateUserResetToken(@Param("user_token_id") BigInteger user_token_id, @Param("reset_token") String reset_token);
+
+    @Query(value = "Select users_tokens.user_token_id, users_tokens.user_id from users_tokens where status = 'A' and reset_token = :reset_token", nativeQuery = true)
+    Optional<UserTokens.UsersTokensProjection> findUserByToken(@Param("reset_token") String reset_token);
+
+    @Query(value = "Update users set password = :new_password where user_id = :user_id and status = 'A' Returning user_id, username, email, password, status", nativeQuery = true)
+    Optional<User> updatePassword(@Param("user_id") BigInteger user_id, @Param("new_password") String new_password);
 }
