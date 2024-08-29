@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigInteger;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -40,7 +39,7 @@ public class UserController {
         }
     }
 
-    @PostMapping("/send_recover_mail")
+    @PostMapping("/send_recover_email")
     public ResponseEntity<ApiResponse> recover_email(@RequestBody User user) {
         try {
             Optional<User> verifyUser = userService.getUserByEmail(user.getEmail());
@@ -82,7 +81,7 @@ public class UserController {
             String password_crypted = bcryptEncoder.encode(request.getNewPassword());
             Optional<User> updatePassword = userService.updatePassword(user.get().getUser_id(), password_crypted);
 
-            BigInteger user_token_id = user.get().getUser_token_id();
+            Long user_token_id = user.get().getUser_token_id();
             Optional<UserTokens.UsersTokensProjection> update_item = userService.updateUserToken(user_token_id, null);
 
             return ResponseEntity.ok(new ApiResponse(true, "Password Reset", null, 200));

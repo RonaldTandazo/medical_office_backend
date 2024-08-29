@@ -1,14 +1,17 @@
 package com.example.proyecto_citas_medicas.entities;
 
+import com.example.proyecto_citas_medicas.controller.UserRolesController;
 import jakarta.persistence.*;
-import java.math.BigInteger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Entity
 @Table(name = "users")
 public class User {
+    private static final Logger logger = LoggerFactory.getLogger(User.class);
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigInteger user_id;
+    private Long user_id;
     private String username;
     private String email;
     private String password;
@@ -26,10 +29,10 @@ public class User {
     }
 
     // Getters y Setters
-    public BigInteger getId() {
+    public Long getId() {
         return user_id;
     }
-    public void setId(BigInteger user_id) {
+    public void setId(Long user_id) {
         this.user_id = user_id;
     }
 
@@ -47,9 +50,7 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
+    public String getPassword() { return password; }
     public void setPassword(String password) {
         this.password = password;
     }
@@ -57,7 +58,7 @@ public class User {
     public String getStatus() {
         return status;
     }
-    public void setEnabled(String status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 }

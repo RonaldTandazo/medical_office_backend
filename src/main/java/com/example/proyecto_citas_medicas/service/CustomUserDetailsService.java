@@ -27,43 +27,29 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // Buscar el usuario por nombre de usuario
-        Optional<User> userOptional = userRepository.findByUsername(username);
-
-        // Manejar el caso en que el usuario no se encuentra
-        if (userOptional.isEmpty()) {
-            throw new UsernameNotFoundException("User not found");
-        }
-
-        // Obtener el usuario de la envoltura Optional
-        User user = userOptional.get();
-
-        // Devolver un UserDetails con la información del usuario
-        // Nota: Utilizamos una contraseña dummy ya que la contraseña no será validada
-        return new org.springframework.security.core.userdetails.User(
-                user.getUsername(),
-                "dummy", // Contraseña dummy, no se valida
-                new ArrayList<>()
-        );
+        logger.info("ENTRO AQUÍ: loadUserByUsername");
+        User user = userRepository.findByEmail(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + username));
+        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), new ArrayList<>());
     }
 
     public Optional<User> getUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 
-    public List<Role.RoleProjection> getUserRoles(BigInteger user_id) {
+    public List<Role.RoleProjection> getUserRoles(Long user_id) {
         return userRepository.findByRolesByUserId(user_id);
     }
 
-    public Optional<UserTokens.UsersTokensProjection> findUserToken(BigInteger user_id){
+    public Optional<UserTokens.UsersTokensProjection> findUserToken(Long user_id){
         return userRepository.findUserTokenByUserId(user_id);
     }
 
-    public Optional<UserTokens.UsersTokensProjection> storeItem(BigInteger user_id, String reset_token){
+    public Optional<UserTokens.UsersTokensProjection> storeItem(Long user_id, String reset_token){
         return userRepository.insertItem(user_id, reset_token);
     }
 
-    public Optional<UserTokens.UsersTokensProjection> updateUserToken(BigInteger user_token_id, String reset_token){
+    public Optional<UserTokens.UsersTokensProjection> updateUserToken(Long user_token_id, String reset_token){
         logger.info(user_token_id.toString());
         logger.info(reset_token);
         return userRepository.updateUserResetToken(user_token_id, reset_token);
@@ -73,7 +59,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         return userRepository.findUserByToken(reset_token);
     }
 
-    public Optional<User> updatePassword(BigInteger user_id, String new_password){
+    public Optional<User> updatePassword(Long user_id, String new_password){
         return userRepository.updatePassword(user_id, new_password);
     }
 

@@ -2,15 +2,13 @@ package com.example.proyecto_citas_medicas.entities;
 
 import jakarta.persistence.*;
 
-import java.math.BigInteger;
-
 @Entity
 @Table(name = "users_tokens")
 public class UserTokens {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigInteger user_token_id;
-    private BigInteger user_id;
+    private Long user_token_id;
+    private Long user_id;
     private String reset_token;
     private String login_token;
 
@@ -24,19 +22,19 @@ public class UserTokens {
         '}';
     }
 
-    public BigInteger getUser_token_id() {
+    public Long getUser_token_id() {
         return user_token_id;
     }
 
-    public void setUser_tokens_id(BigInteger user_token_id) {
+    public void setUser_tokens_id(Long user_token_id) {
         this.user_token_id = user_token_id;
     }
 
-    public BigInteger getUser_id() {
+    public Long getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(BigInteger user_id) {
+    public void setUser_id(Long user_id) {
         this.user_id = user_id;
     }
 
@@ -57,8 +55,8 @@ public class UserTokens {
     }
 
     public interface UsersTokensProjection {
-        BigInteger getUser_token_id();
-        BigInteger getUser_id();
+        Long getUser_token_id();
+        Long getUser_id();
         String getReset_token();
         String getLogin_token();
     }
