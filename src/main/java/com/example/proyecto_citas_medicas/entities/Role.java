@@ -3,14 +3,13 @@ package com.example.proyecto_citas_medicas.entities;
 import jakarta.persistence.*;
 
 import java.math.BigInteger;
-import java.util.Set;
 
 @Entity
 @Table(name = "roles")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigInteger role_id;
+    private Long role_id;
     private String name;
 
     @Override
@@ -22,10 +21,10 @@ public class Role {
     }
 
     // Getters y Setters
-    public BigInteger getId() {
+    public Long getId() {
         return role_id;
     }
-    public void setId(BigInteger role_id) {
+    public void setId(Long role_id) {
         this.role_id = role_id;
     }
 

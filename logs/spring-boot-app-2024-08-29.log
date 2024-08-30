@@ -1,0 +1,10 @@
+2024-08-29 23:59:29 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/signup
+2024-08-29 23:59:29 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/signup
+2024-08-29 23:59:29 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-29 23:59:29 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/signup
+2024-08-29 23:59:29 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/signup", parameters={}
+2024-08-29 23:59:29 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#register(RegisterUserDto)
+2024-08-29 23:59:29 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.proyecto_citas_medicas.dtos.RegisterUserDto@27db32c1]
+2024-08-29 23:59:29 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-29 23:59:29 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [User{user_id=13, username='Victor Manuel Vicente Montero', email='vvicentem@hotmail.com', password=' (truncated)...]
+2024-08-29 23:59:29 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK

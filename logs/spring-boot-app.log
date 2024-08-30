@@ -1,15 +1,591 @@
-2024-08-28 00:01:49 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
-2024-08-28 00:01:49 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
-2024-08-28 00:01:49 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2024-08-28 00:01:49 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
-2024-08-28 00:01:49 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/login", parameters={}
-2024-08-28 00:01:49 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthController#login(User)
-2024-08-28 00:01:49 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmojdjsd@est.ups.edu.ec', password='Paqsdasdas', status=' (truncated)...]
-2024-08-28 00:01:49 INFO  c.e.p.controller.AuthController - authentication: UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=vmojdjsd@est.ups.edu.ec, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[USER]]
-2024-08-28 00:01:49 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-08-28 00:01:49 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@5d11e6e5]
-2024-08-28 00:01:49 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-08-28 06:52:00 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=6h16m48s221ms490µs500ns).
-2024-08-28 06:54:55 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-08-28 06:54:55 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
-2024-08-28 06:54:55 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2024-08-30 00:50:17 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:50:17 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:50:17 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:50:17 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:50:17 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:50:17 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:50:17 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='edu09085@hotmail.com', password='null', status='null'}]
+2024-08-30 00:50:17 INFO  c.e.p.c.AuthenticationController - user: edu09085@hotmail.com
+2024-08-30 00:50:17 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:50:17 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@63feaeda]
+2024-08-30 00:50:17 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:50:49 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:50:49 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:50:49 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:50:49 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:50:49 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:50:49 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:50:49 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:50:49 INFO  c.e.p.c.AuthenticationController - user: vmanuel@vuetify.com
+2024-08-30 00:50:49 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:50:49 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@19d12759]
+2024-08-30 00:50:49 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:51:13 INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-30 00:51:13 INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2024-08-30 00:51:13 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30 00:51:13 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-150 - Shutdown initiated...
+2024-08-30 00:51:13 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-150 - Shutdown completed.
+2024-08-30 00:51:13 INFO  c.e.p.ProyectoCitasMedicasApplication - Starting ProyectoCitasMedicasApplication using Java 22.0.2 with PID 5584 (C:\Users\Ronald\Medical Office\medical_office_backend\bin\main started by Ronald in C:\Users\Ronald\Medical Office\medical_office_backend)
+2024-08-30 00:51:13 INFO  c.e.p.ProyectoCitasMedicasApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.AccountPlanRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.CertificadoMedicoRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.CitaRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.ColaboradorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.ComprobanteVentaRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.ConsultaMedicaRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.FacturacionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.GeneralParameterRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.HistoriaClinicaRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.LibroDiarioRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.MedicoRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.PacienteRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.PermissionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.RoleRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.TransaccionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UsersRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 JDBC repository interfaces.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-30 00:51:13 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 17 JPA repository interfaces.
+2024-08-30 00:51:13 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-30 00:51:13 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-08-30 00:51:13 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2024-08-30 00:51:13 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2024-08-30 00:51:13 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-08-30 00:51:13 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-30 00:51:13 INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-08-30 00:51:13 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 287 ms
+2024-08-30 00:51:13 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-30 00:51:13 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-08-30 00:51:13 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-30 00:51:13 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-151 - Starting...
+2024-08-30 00:51:14 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-151 - Added connection org.postgresql.jdbc.PgConnection@697f6e21
+2024-08-30 00:51:14 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-151 - Start completed.
+2024-08-30 00:51:14 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30 00:51:14 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-30 00:51:14 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30 00:51:14 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-30 00:51:14 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-30 00:51:14 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-08-30 00:51:14 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-30 00:51:14 WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-08-30 00:51:14 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 77 mappings in 'requestMappingHandlerMapping'
+2024-08-30 00:51:14 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-30 00:51:14 DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, JwtAuthorizationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-08-30 00:51:14 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-30 00:51:14 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-08-30 00:51:14 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2024-08-30 00:51:14 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2024-08-30 00:51:14 INFO  c.e.p.ProyectoCitasMedicasApplication - Started ProyectoCitasMedicasApplication in 1.338 seconds (process running for 12019.957)
+2024-08-30 00:51:14 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-08-30 00:51:47 INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-30 00:51:47 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-08-30 00:51:47 DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2024-08-30 00:51:47 DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2024-08-30 00:51:47 DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2024-08-30 00:51:47 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1d11abe0
+2024-08-30 00:51:47 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@22f28128
+2024-08-30 00:51:47 DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-08-30 00:51:47 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-08-30 00:51:47 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:51:47 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:51:47 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:51:47 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:51:47 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:51:47 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:51:47 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:51:47 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:51:47 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@173f813a]
+2024-08-30 00:51:47 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:51:48 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:51:48 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:51:48 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:51:48 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:51:48 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:51:48 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:51:48 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:51:48 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@7b7c857c]
+2024-08-30 00:51:48 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:51:52 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:51:52 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:51:52 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:51:52 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:51:52 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:51:52 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:51:52 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='edu09085@hotmail.com', password='null', status='null'}]
+2024-08-30 00:51:52 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:51:52 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@259344c3]
+2024-08-30 00:51:52 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:51:52 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:51:52 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:51:52 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:51:52 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:51:52 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:51:52 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:51:52 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:51:52 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@5b4ac1cf]
+2024-08-30 00:51:52 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:51:59 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:51:59 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:51:59 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:51:59 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:51:59 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:51:59 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:51:59 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='edu09085@hotmail.com', password='null', status='null'}]
+2024-08-30 00:51:59 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:51:59 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@334e989c]
+2024-08-30 00:51:59 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:52:00 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:52:00 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:52:00 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:52:00 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:52:00 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:52:00 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:52:00 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:52:00 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@329e5a28]
+2024-08-30 00:52:00 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:52:06 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:52:06 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:52:06 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:52:06 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:52:06 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:52:06 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:52:06 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vm', password='null', status='null'}]
+2024-08-30 00:52:06 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:52:06 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@1ae2ef4]
+2024-08-30 00:52:06 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:52:08 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:52:08 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:52:08 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:52:08 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:52:08 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:52:08 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanue', password='null', status='null'}]
+2024-08-30 00:52:08 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:52:08 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@2f2e3cb9]
+2024-08-30 00:52:08 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:52:10 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:52:10 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:52:10 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:52:10 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:52:10 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:52:10 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='v', password='null', status='null'}]
+2024-08-30 00:52:10 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:52:10 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@2e9d6d69]
+2024-08-30 00:52:10 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:52:13 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:52:13 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:52:13 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:52:13 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:52:13 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:52:13 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:52:13 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vvicente', password='null', status='null'}]
+2024-08-30 00:52:13 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:52:13 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@794d9eb0]
+2024-08-30 00:52:13 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:52:14 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:52:14 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:52:14 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:52:14 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:52:14 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:52:14 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vvicentem@', password='null', status='null'}]
+2024-08-30 00:52:14 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:52:14 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@e0bafac]
+2024-08-30 00:52:14 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:52:17 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:52:17 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:52:17 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:52:17 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:52:17 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:52:17 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vvicentem@hotmail.com', password='null', status='null'}]
+2024-08-30 00:52:17 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:52:17 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@3b490d7f]
+2024-08-30 00:52:17 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:53:30 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:53:30 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:53:30 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:53:30 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:53:30 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:53:30 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:53:30 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:53:30 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:53:30 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@51f00753]
+2024-08-30 00:53:30 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:53:46 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:53:46 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:53:46 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:53:46 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:53:46 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:53:46 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:53:46 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:53:46 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:53:46 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@75c29d7e]
+2024-08-30 00:53:46 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:53:52 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:53:52 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:53:52 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:53:52 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:53:52 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:53:52 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:53:52 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='edu09085@hotmail.com', password='null', status='null'}]
+2024-08-30 00:53:52 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:53:52 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@7231ff14]
+2024-08-30 00:53:52 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:53:53 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:53:53 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:53:53 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:53:53 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:53:53 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:53:53 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:53:53 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:53:53 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@54e2aa4a]
+2024-08-30 00:53:53 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:53:55 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:53:55 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:53:55 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:53:55 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:53:55 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:53:55 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='edu09085@hotmail.com', password='null', status='null'}]
+2024-08-30 00:53:55 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:53:55 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@56ed5f9e]
+2024-08-30 00:53:55 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:53:56 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:53:56 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:53:56 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:53:56 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:53:56 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:53:56 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:53:56 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:53:56 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@676dbb79]
+2024-08-30 00:53:56 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:54:01 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:54:01 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:54:01 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:54:01 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:54:01 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:54:01 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:54:01 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='edu09085@hotmail.com', password='null', status='null'}]
+2024-08-30 00:54:01 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:54:01 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@6d500e39]
+2024-08-30 00:54:01 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:54:01 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:54:01 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:54:01 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:54:01 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:54:01 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:54:01 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:54:01 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:54:01 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@f85d0b4]
+2024-08-30 00:54:01 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:54:03 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:54:03 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:54:03 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:54:03 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:54:03 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:54:03 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='edu09085@hotmail.com', password='null', status='null'}]
+2024-08-30 00:54:03 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:54:03 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@29be18c1]
+2024-08-30 00:54:03 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:54:10 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:54:10 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:54:10 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:54:10 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:54:10 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:54:10 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:54:10 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:54:10 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:54:10 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@3ae44514]
+2024-08-30 00:54:10 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:54:13 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:54:13 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:54:13 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:54:13 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:54:13 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:54:13 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='edu09085@hotmail.com', password='null', status='null'}]
+2024-08-30 00:54:13 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:54:13 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@3e39b002]
+2024-08-30 00:54:13 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:54:13 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:54:13 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:54:13 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:54:13 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:54:13 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:54:13 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:54:13 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:54:13 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@5f7515b4]
+2024-08-30 00:54:13 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:54:51 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:54:51 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:54:51 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:54:51 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:54:51 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:54:51 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:54:51 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='edu09085@hotmail.com', password='null', status='null'}]
+2024-08-30 00:54:51 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:54:51 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@51213f1c]
+2024-08-30 00:54:51 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:55:18 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:55:18 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:55:18 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:55:18 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:55:18 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:55:18 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:55:18 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='edu09085@hotmail.com', password='null', status='null'}]
+2024-08-30 00:55:18 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:55:18 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@67348ebc]
+2024-08-30 00:55:18 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:55:20 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:55:20 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:55:20 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:55:20 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:55:20 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:55:20 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:55:20 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:55:20 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@359a3730]
+2024-08-30 00:55:20 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:55:52 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:55:52 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:55:52 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:55:52 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:55:52 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:55:52 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:55:52 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:55:52 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:55:52 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@5188868d]
+2024-08-30 00:55:52 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:56:00 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:56:00 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:56:00 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:56:00 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:56:00 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:56:00 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:56:00 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:56:00 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:56:00 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@15d86c9d]
+2024-08-30 00:56:00 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:56:06 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:56:06 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:56:06 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:56:06 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:56:06 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:56:06 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:56:06 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='edu09085@hotmail.com', password='null', status='null'}]
+2024-08-30 00:56:06 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:56:06 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@5afe96e1]
+2024-08-30 00:56:06 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:56:07 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:56:07 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:56:07 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:56:07 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:56:07 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:56:07 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:56:07 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:56:07 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@31230cdb]
+2024-08-30 00:56:07 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:56:10 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:56:10 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:56:10 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:56:10 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:56:10 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:56:10 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='edu09085@hotmail.com', password='null', status='null'}]
+2024-08-30 00:56:10 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:56:10 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@44be1748]
+2024-08-30 00:56:10 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:56:10 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:56:10 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:56:10 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:56:10 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:56:10 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:56:10 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:56:10 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:56:10 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@f4a844b]
+2024-08-30 00:56:10 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:56:12 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:56:12 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:56:12 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:56:12 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:56:12 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:56:12 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:56:12 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='edu09085@hotmail.com', password='null', status='null'}]
+2024-08-30 00:56:12 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:56:12 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@50e5c203]
+2024-08-30 00:56:12 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:56:17 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:56:17 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:56:17 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:56:17 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:56:17 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:56:17 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:56:17 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:56:17 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:56:17 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@65a55b20]
+2024-08-30 00:56:17 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:56:59 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:56:59 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:56:59 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:56:59 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:56:59 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:56:59 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:56:59 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='edu09085@hotmail.com', password='null', status='null'}]
+2024-08-30 00:56:59 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:56:59 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@407aa42d]
+2024-08-30 00:56:59 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:57:02 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:57:02 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:57:02 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:57:02 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:57:02 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:57:02 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:57:02 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:57:02 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@48bf954f]
+2024-08-30 00:57:02 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:57:05 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/verify_email
+2024-08-30 00:57:05 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:57:05 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:57:05 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:57:05 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:57:05 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:57:05 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='edu09085@hotmail.com', password='null', status='null'}]
+2024-08-30 00:57:05 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:57:05 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@2cb75202]
+2024-08-30 00:57:05 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:57:07 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/verify_email
+2024-08-30 00:57:07 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-08-30 00:57:07 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/verify_email
+2024-08-30 00:57:07 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/verify_email", parameters={}
+2024-08-30 00:57:07 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#verifyUser(User)
+2024-08-30 00:57:07 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{user_id=null, username='null', email='vmanuel@vuetify.com', password='null', status='null'}]
+2024-08-30 00:57:07 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-08-30 00:57:07 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@5417f573]
+2024-08-30 00:57:07 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-30 00:59:45 INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-30 00:59:45 INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2024-08-30 00:59:45 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30 00:59:45 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-151 - Shutdown initiated...
+2024-08-30 00:59:45 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-151 - Shutdown completed.
+2024-08-30 00:59:45 INFO  c.e.p.ProyectoCitasMedicasApplication - Starting ProyectoCitasMedicasApplication using Java 22.0.2 with PID 5584 (C:\Users\Ronald\Medical Office\medical_office_backend\bin\main started by Ronald in C:\Users\Ronald\Medical Office\medical_office_backend)
+2024-08-30 00:59:45 INFO  c.e.p.ProyectoCitasMedicasApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.AccountPlanRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.CertificadoMedicoRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.CitaRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.ColaboradorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.ComprobanteVentaRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.ConsultaMedicaRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.FacturacionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.GeneralParameterRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.HistoriaClinicaRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.LibroDiarioRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.MedicoRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.PacienteRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.PermissionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.RoleRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.TransaccionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UsersRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 JDBC repository interfaces.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-30 00:59:45 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 17 JPA repository interfaces.
+2024-08-30 00:59:45 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-30 00:59:45 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-08-30 00:59:45 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2024-08-30 00:59:45 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2024-08-30 00:59:45 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-08-30 00:59:45 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-30 00:59:46 INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-08-30 00:59:46 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 416 ms
+2024-08-30 00:59:46 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-30 00:59:46 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-08-30 00:59:46 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-30 00:59:46 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-152 - Starting...
+2024-08-30 00:59:46 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-152 - Added connection org.postgresql.jdbc.PgConnection@77d7992e
+2024-08-30 00:59:46 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-152 - Start completed.
+2024-08-30 00:59:46 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30 00:59:46 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-30 00:59:46 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30 00:59:46 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-30 00:59:46 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-30 00:59:46 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-08-30 00:59:46 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-30 00:59:46 WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-08-30 00:59:46 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 78 mappings in 'requestMappingHandlerMapping'
+2024-08-30 00:59:46 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-30 00:59:46 DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, JwtAuthorizationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-08-30 00:59:46 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-30 00:59:46 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-08-30 00:59:46 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2024-08-30 00:59:46 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2024-08-30 00:59:46 INFO  c.e.p.ProyectoCitasMedicasApplication - Started ProyectoCitasMedicasApplication in 1.119 seconds (process running for 12531.712)
+2024-08-30 00:59:46 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-08-30 01:01:09 INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-30 01:01:09 INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2024-08-30 01:01:09 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30 01:01:09 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-152 - Shutdown initiated...
+2024-08-30 01:01:09 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-152 - Shutdown completed.
+2024-08-30 01:01:09 INFO  c.e.p.ProyectoCitasMedicasApplication - Starting ProyectoCitasMedicasApplication using Java 22.0.2 with PID 5584 (C:\Users\Ronald\Medical Office\medical_office_backend\bin\main started by Ronald in C:\Users\Ronald\Medical Office\medical_office_backend)
+2024-08-30 01:01:09 INFO  c.e.p.ProyectoCitasMedicasApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.AccountPlanRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.CertificadoMedicoRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.CitaRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.ColaboradorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.ComprobanteVentaRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.ConsultaMedicaRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.FacturacionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.GeneralParameterRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.HistoriaClinicaRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.LibroDiarioRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.MedicoRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.PacienteRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.PermissionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.RoleRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.TransaccionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UsersRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 JDBC repository interfaces.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-30 01:01:09 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 17 JPA repository interfaces.
+2024-08-30 01:01:09 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-30 01:01:09 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-08-30 01:01:09 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2024-08-30 01:01:09 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2024-08-30 01:01:09 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-08-30 01:01:09 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-30 01:01:10 INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-08-30 01:01:10 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 269 ms
+2024-08-30 01:01:10 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-30 01:01:10 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-08-30 01:01:10 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-30 01:01:10 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-153 - Starting...
+2024-08-30 01:01:10 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-153 - Added connection org.postgresql.jdbc.PgConnection@6ffea115
+2024-08-30 01:01:10 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-153 - Start completed.
+2024-08-30 01:01:10 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30 01:01:10 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-30 01:01:10 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30 01:01:10 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-30 01:01:10 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-30 01:01:10 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-08-30 01:01:10 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-30 01:01:10 WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-08-30 01:01:10 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 78 mappings in 'requestMappingHandlerMapping'
+2024-08-30 01:01:10 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-30 01:01:10 DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, JwtAuthorizationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-08-30 01:01:10 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-30 01:01:10 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-08-30 01:01:10 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2024-08-30 01:01:10 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2024-08-30 01:01:10 INFO  c.e.p.ProyectoCitasMedicasApplication - Started ProyectoCitasMedicasApplication in 1.157 seconds (process running for 12615.881)
+2024-08-30 01:01:10 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-08-30 01:01:42 INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-30 01:01:42 INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2024-08-30 01:01:42 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30 01:01:42 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-153 - Shutdown initiated...
+2024-08-30 01:01:42 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-153 - Shutdown completed.
+2024-08-30 01:01:42 INFO  c.e.p.ProyectoCitasMedicasApplication - Starting ProyectoCitasMedicasApplication using Java 22.0.2 with PID 5584 (C:\Users\Ronald\Medical Office\medical_office_backend\bin\main started by Ronald in C:\Users\Ronald\Medical Office\medical_office_backend)
+2024-08-30 01:01:42 INFO  c.e.p.ProyectoCitasMedicasApplication - No active profile set, falling back to 1 default profile: "default"

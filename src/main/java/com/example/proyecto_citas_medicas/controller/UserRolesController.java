@@ -1,52 +1,48 @@
 package com.example.proyecto_citas_medicas.controller;
 
+import com.example.proyecto_citas_medicas.dtos.LoginUserDto;
 import com.example.proyecto_citas_medicas.entities.ApiResponse;
-import com.example.proyecto_citas_medicas.entities.Role;
 import com.example.proyecto_citas_medicas.entities.User;
-import com.example.proyecto_citas_medicas.service.CustomUserDetailsService;
+import com.example.proyecto_citas_medicas.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
 public class UserRolesController {
 
     private static final Logger logger = LoggerFactory.getLogger(UserRolesController.class);
-    private CustomUserDetailsService userService;
+    private final UserService userService;
 
-    public UserRolesController(CustomUserDetailsService customUserDetailsService) {
-        this.userService = customUserDetailsService;
+    public UserRolesController(UserService userService) {
+        this.userService = userService;
     }
 
     @PostMapping("/user_roles")
-    public ResponseEntity<ApiResponse> get_user_roles(@RequestBody User user) {
+    public ResponseEntity<ApiResponse> get_user_roles(@RequestBody LoginUserDto loginUserDto) {
         try {
-            Optional<User> verifyUser = userService.getUserByEmail(user.getEmail());
-
-            if(!verifyUser.isPresent()){
-                return ResponseEntity.ok(new ApiResponse(true, "User Not Found", null, 303));
+            User verifyUser = userService.verifyUser(loginUserDto.getEmail());
+            if(verifyUser == null){
+                return ResponseEntity.ok(new ApiResponse(false, "User Not Found", null, HttpStatus.NOT_FOUND.value()));
             }
 
-            List<Role.RoleProjection> userRoles = userService.getUserRoles(verifyUser.get().getId());
-            // Comprobar si la lista está vacía
+            List<Map<String, Object>> userRoles = userService.getUserRoles(verifyUser.getId());
             if (userRoles.isEmpty()) {
-                return ResponseEntity.ok(new ApiResponse(true, "No roles found for user", null, 303));
+                return ResponseEntity.ok(new ApiResponse(false, "No roles found", null, HttpStatus.NOT_FOUND.value()));
             }
 
-            // Respuesta de éxito
-            return ResponseEntity.ok(new ApiResponse(true, "User Found!!!", userRoles, 200));
+            return ResponseEntity.ok(new ApiResponse(true, "User Found!!!", userRoles, HttpStatus.OK.value()));
         } catch (Exception e) {
             String className = this.getClass().getName();
             String methodName = new Throwable().getStackTrace()[0].getMethodName();
-            logger.error("ERROR:"+className + ":" + methodName+" -> "+e.getMessage());            // Manejo de excepciones y respuesta de error
+            logger.error("ERROR:"+className + ":" + methodName+" -> "+e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(new ApiResponse(false, "Error Searching User Roles: " + e.getMessage(), null, 404));
+                .body(new ApiResponse(false, "Error Searching User Roles: " + e.getMessage(), null, HttpStatus.INTERNAL_SERVER_ERROR.value()));
         }
     }
 }

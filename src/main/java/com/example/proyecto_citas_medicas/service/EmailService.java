@@ -5,10 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-import jakarta.mail.internet.MimeMessage;
-import jakarta.mail.MessagingException;
 
 @Service
 public class EmailService {
