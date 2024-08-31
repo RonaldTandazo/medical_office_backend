@@ -23,4 +23,8 @@ public class UserService {
     public List<Map<String, Object>> getUserRoles(Long user_id){
         return userRepository.findRolesByUserId(user_id);
     }
+
+    public User updatePassword(Long user_id, String new_password){
+        return userRepository.updatePassword(user_id, new_password);
+    } 
 }

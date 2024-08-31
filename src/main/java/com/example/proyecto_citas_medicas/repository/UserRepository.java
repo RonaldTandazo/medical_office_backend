@@ -19,4 +19,6 @@ public interface UserRepository extends CrudRepository<User, Long> {
             "WHERE user_roles.user_id = :user_id and user_roles.status = 'A'", nativeQuery = true)
     List<Map<String, Object>> findRolesByUserId(@Param("user_id") Long user_id);
 
+    @Query(value = "Update users set password = :new_password where user_id = :user_id and status = 'A' Returning user_id, username, email, password, status", nativeQuery = true)
+    User updatePassword(@Param("user_id") Long user_id, @Param("new_password") String new_password);
 }

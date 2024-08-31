@@ -2,20 +2,22 @@ package com.example.proyecto_citas_medicas.controller;
 
 import com.example.proyecto_citas_medicas.dtos.LoginResponse;
 import com.example.proyecto_citas_medicas.dtos.LoginUserDto;
+import com.example.proyecto_citas_medicas.dtos.RecoverPasswordDto;
 import com.example.proyecto_citas_medicas.dtos.RegisterUserDto;
 import com.example.proyecto_citas_medicas.entities.ApiResponse;
 import com.example.proyecto_citas_medicas.entities.User;
+import com.example.proyecto_citas_medicas.entities.UserTokens;
 import com.example.proyecto_citas_medicas.service.AuthenticationService;
 import com.example.proyecto_citas_medicas.service.EmailService;
 import com.example.proyecto_citas_medicas.service.UserService;
+import com.example.proyecto_citas_medicas.service.UserTokensService;
 import com.example.proyecto_citas_medicas.utils.JwtUtil;
-
 import java.util.UUID;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -25,14 +27,25 @@ public class AuthenticationController {
     private final JwtUtil jwtUtil;
     private final EmailService emailService;
     private final AuthenticationService authenticationService;
-    private static final Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
     private final UserService userService;
+    private final UserTokensService userTokensService;
+    private BCryptPasswordEncoder bcryptEncoder;
+    private static final Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
 
-    public AuthenticationController(JwtUtil jwtUtil, EmailService emailService, AuthenticationService authenticationService, UserService userService) {
+    public AuthenticationController(
+        JwtUtil jwtUtil, 
+        EmailService emailService,
+        AuthenticationService authenticationService,
+        UserService userService,
+        UserTokensService userTokensService,
+        BCryptPasswordEncoder bcryptEncoder
+    ) {
         this.jwtUtil = jwtUtil;
         this.emailService = emailService;
         this.authenticationService = authenticationService;
         this.userService = userService;
+        this.userTokensService = userTokensService;
+        this.bcryptEncoder = bcryptEncoder;
     }
 
     @PostMapping("signup")
@@ -91,57 +104,62 @@ public class AuthenticationController {
     
 
     @PostMapping("send_recover_email")
-    public ResponseEntity<ApiResponse> recover_email(@RequestBody User user) {
+    public ResponseEntity<ApiResponse> recover_email(@RequestBody RecoverPasswordDto recover) {
         try {
-            User verifyUser = userService.verifyUser(user.getEmail());
-
+            User verifyUser = userService.verifyUser(recover.getEmail());
             if(verifyUser == null){
-                return ResponseEntity.ok(new ApiResponse(true, "User Not Found", null, HttpStatus.NOT_FOUND.value()));
+                return ResponseEntity.ok(new ApiResponse(false, "User Not Found", null, HttpStatus.NOT_FOUND.value()));
             }
 
             String token = UUID.randomUUID().toString();
-            emailService.sendPasswordResetEmail(user.getEmail(), token);
+            emailService.sendPasswordResetEmail(recover.getEmail(), token);
 
-            Optional<UserTokens.UsersTokensProjection> find_item = userService.findUserToken(verifyUser.getId());
-            if(find_item.isEmpty()){
-                Optional<UserTokens.UsersTokensProjection> store_token = userService.storeItem(verifyUser.getId(), token);
+            UserTokens find_item = userTokensService.findItemByUserId(verifyUser.getId());
+            logger.info("item: "+find_item);
+            UserTokens info = null;
+
+            if(find_item == null){
+                info = userTokensService.insertItem(verifyUser.getId(), token);
+            }else{
+                info = userTokensService.updateItem(find_item.getUser_token_id(), token);
             }
 
-            Optional<UserTokens.UsersTokensProjection> update_item = userService.updateUserToken(find_item.get().getUser_token_id(), token);
-
-            return ResponseEntity.ok(new ApiResponse(true, "Recover Password Email Send", null, HttpStatus.OK.value()));
+            return ResponseEntity.ok(new ApiResponse(true, "Recover Password Email Send", info, HttpStatus.OK.value()));
         } catch (Exception e) {
             String className = this.getClass().getName();
             String methodName = new Throwable().getStackTrace()[0].getMethodName();
-            logger.error("ERROR:"+className + ":" + methodName+" -> "+e.getMessage());
+            logger.error("ERROR: "+className + ":" + methodName+" -> "+e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(new ApiResponse(false, "Error Sending Recover Email", null, HttpStatus.INTERNAL_SERVER_ERROR.value()));
         }
     }
 
-    // @PutMapping("/reset_password")
-    // public ResponseEntity<ApiResponse> reset_password(@RequestParam String token, @RequestBody PasswordReset request) {
-    //     try {
-    //         Optional<UserTokens.UsersTokensProjection> user = userService.findUserByToken(token);
-    //         if (user.isEmpty()) {
-    //             return ResponseEntity.ok(new ApiResponse(true, "Expired Link", null, 303));
-    //         }
+    @PutMapping("/reset_password")
+    public ResponseEntity<ApiResponse> reset_password(@RequestParam("token") String token, @RequestBody RecoverPasswordDto request) {
+        try {
+            UserTokens userToken = userTokensService.findItemByToken(token);
+            if (userToken == null) {
+                return ResponseEntity.ok(new ApiResponse(false, "Expired Link", null, HttpStatus.NOT_FOUND.value()));
+            }
+            
+            Long user_token_id = userToken.getUser_token_id();
+            String password_crypted = bcryptEncoder.encode(request.getNewPassword());
+            User updatePassword = userService.updatePassword(userToken.getUser_id(), password_crypted);
 
+            if(updatePassword == null){
+                return ResponseEntity.ok(new ApiResponse(false, "Password can`t be Reset", null, HttpStatus.NOT_MODIFIED.value()));
+            }
 
-    //         String password_crypted = bcryptEncoder.encode(request.getNewPassword());
-    //         Optional<User> updatePassword = userService.updatePassword(user.get().getUser_id(), password_crypted);
+            userTokensService.updateItem(user_token_id, null);
 
-    //         Long user_token_id = user.get().getUser_token_id();
-    //         Optional<UserTokens.UsersTokensProjection> update_item = userService.updateUserToken(user_token_id, null);
+            return ResponseEntity.ok(new ApiResponse(true, "Password Reset", null, HttpStatus.OK.value()));
+        } catch (Exception e) {
+            String className = this.getClass().getName();
+            String methodName = new Throwable().getStackTrace()[0].getMethodName();
+            logger.error("ERROR:"+className + ":" + methodName+" -> "+e.getMessage());
 
-    //         return ResponseEntity.ok(new ApiResponse(true, "Password Reset", null, 200));
-    //     } catch (Exception e) {
-    //         String className = this.getClass().getName();
-    //         String methodName = new Throwable().getStackTrace()[0].getMethodName();
-    //         logger.error("ERROR:"+className + ":" + methodName+" -> "+e.getMessage());
-
-    //         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-    //                 .body(new ApiResponse(false, "Error Recovering Password", null, 404));
-    //     }
-    // }
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(new ApiResponse(false, "Error Recovering Password", null, HttpStatus.INTERNAL_SERVER_ERROR.value()));
+        }
+    }
 }

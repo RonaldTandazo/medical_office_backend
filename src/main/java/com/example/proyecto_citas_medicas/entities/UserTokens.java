@@ -12,16 +12,6 @@ public class UserTokens {
     private String reset_token;
     private String login_token;
 
-
-    public String toString() {
-        return "UserTokens{" +
-            "user_tokens_id=" + user_token_id +
-            ", user_id='" + user_id + '\'' +
-            ", reset_token='" + reset_token + '\'' +
-            ", login_token='" + login_token + '\'' +
-        '}';
-    }
-
     public Long getUser_token_id() {
         return user_token_id;
     }
@@ -52,12 +42,5 @@ public class UserTokens {
 
     public void setLogin_token(String login_token) {
         this.login_token = login_token;
-    }
-
-    public interface UsersTokensProjection {
-        Long getUser_token_id();
-        Long getUser_id();
-        String getReset_token();
-        String getLogin_token();
     }
 }
