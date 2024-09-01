@@ -14,6 +14,11 @@ public class User implements UserDetails{
     private Long user_id;
     private String username;
     private String email;
+    private String identification;
+    private Character gender;
+    private Long age;
+    private String phonenumber;
+    private String avatar;
     private String password;
     private String status;
 
@@ -23,6 +28,11 @@ public class User implements UserDetails{
             "user_id=" + user_id +
             ", username='" + username + '\'' +
             ", email='" + email + '\'' +
+            ", identification='" + identification + '\'' +
+            ", gender='" + gender + '\'' +
+            ", age='" + age + '\'' +
+            ", phonenumber='" + phonenumber + '\'' +
+            ", avatar='" + avatar + '\'' +
             ", password='" + password + '\'' +
             ", status='" + status + '\'' +
         '}';
@@ -50,7 +60,44 @@ public class User implements UserDetails{
         this.email = email;
     }
 
-    public String getPassword() { return password; }
+    public String getIdentification() {
+        return identification;
+    }
+    public void setIdentification(String identification) {
+        this.identification = identification;
+    }
+
+    public Character getGender() {
+        return gender;
+    }
+    public void setGender(Character gender) {
+        this.gender = gender;
+    }
+
+    public Long getAge() {
+        return age;
+    }
+    public void setAge(Long age) {
+        this.age = age;
+    }
+
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getPassword() {
+        return password;
+    }
     public void setPassword(String password) {
         this.password = password;
     }

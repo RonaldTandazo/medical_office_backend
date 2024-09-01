@@ -21,4 +21,19 @@ public interface UserRepository extends CrudRepository<User, Long> {
 
     @Query(value = "Update users set password = :new_password where user_id = :user_id and status = 'A' Returning user_id, username, email, password, status", nativeQuery = true)
     User updatePassword(@Param("user_id") Long user_id, @Param("new_password") String new_password);
+
+    @Query(value = "UPDATE users SET username = :username, identification = :identification, gender = :gender, "
+        + "age = :age, phonenumber = :phonenumber "
+        + "WHERE user_id = :userId AND status = 'A' "
+        + "RETURNING user_id, username, email, identification, gender, age, phonenumber, avatar, password, status",
+        nativeQuery = true)
+    User updateItem(
+        @Param("userId") Long userId,
+        @Param("username") String username,
+        @Param("identification") String identification,
+        @Param("gender") Character gender,
+        @Param("age") Long age,
+        @Param("phonenumber") String phonenumber
+    );
+
 }

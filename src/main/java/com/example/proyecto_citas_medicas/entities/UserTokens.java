@@ -12,35 +12,35 @@ public class UserTokens {
     private String reset_token;
     private String login_token;
 
-    public Long getUser_token_id() {
+    public Long getUserTokenId() {
         return user_token_id;
     }
 
-    public void setUser_tokens_id(Long user_token_id) {
+    public void setUserTokenId(Long user_token_id) {
         this.user_token_id = user_token_id;
     }
 
-    public Long getUser_id() {
+    public Long getUserId() {
         return user_id;
     }
 
-    public void setUser_id(Long user_id) {
+    public void setUserId(Long user_id) {
         this.user_id = user_id;
     }
 
-    public String getReset_token() {
+    public String getResetToken() {
         return reset_token;
     }
 
-    public void setReset_token(String reset_token) {
+    public void setResetToken(String reset_token) {
         this.reset_token = reset_token;
     }
 
-    public String getLogin_token() {
+    public String getLoginToken() {
         return login_token;
     }
 
-    public void setLogin_token(String login_token) {
+    public void setLoginToken(String login_token) {
         this.login_token = login_token;
     }
 }

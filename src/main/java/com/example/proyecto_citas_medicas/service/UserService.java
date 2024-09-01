@@ -26,5 +26,16 @@ public class UserService {
 
     public User updatePassword(Long user_id, String new_password){
         return userRepository.updatePassword(user_id, new_password);
-    } 
+    }
+
+    public User updateItem(User user){
+        Long userId = user.getId();
+        String username = user.getUsername();
+        String identification = user.getIdentification();
+        Character gender = user.getGender();
+        Long age = user.getAge();
+        String phonenumber = user.getPhonenumber();
+
+        return userRepository.updateItem(userId, username, identification, gender, age, phonenumber);
+    }
 }

@@ -12,6 +12,9 @@ import com.example.proyecto_citas_medicas.service.EmailService;
 import com.example.proyecto_citas_medicas.service.UserService;
 import com.example.proyecto_citas_medicas.service.UserTokensService;
 import com.example.proyecto_citas_medicas.utils.JwtUtil;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,9 +70,16 @@ public class AuthenticationController {
     public ResponseEntity<ApiResponse> authenticate(@RequestBody LoginUserDto loginUserDto) {
         try{
             User authenticatedUser = authenticationService.authenticate(loginUserDto);
-    
-            String jwtToken = jwtUtil.generateToken(authenticatedUser);
-    
+
+            Map<String, Object> extraClaims = new HashMap<>();
+            extraClaims.put("username", authenticatedUser.getUsername());
+            extraClaims.put("identification", authenticatedUser.getIdentification());
+            extraClaims.put("gender", authenticatedUser.getGender());
+            extraClaims.put("age", authenticatedUser.getAge());
+            extraClaims.put("phonenumber", authenticatedUser.getPhonenumber());
+            
+            String jwtToken = jwtUtil.generateToken(extraClaims, authenticatedUser);
+            
             LoginResponse loginResponse = new LoginResponse();
             loginResponse.setToken(jwtToken);
             loginResponse.setExpiresIn(jwtUtil.getExpirationTime());
@@ -104,7 +114,7 @@ public class AuthenticationController {
     
 
     @PostMapping("send_recover_email")
-    public ResponseEntity<ApiResponse> recover_email(@RequestBody RecoverPasswordDto recover) {
+    public ResponseEntity<ApiResponse> recoverEmail(@RequestBody RecoverPasswordDto recover) {
         try {
             User verifyUser = userService.verifyUser(recover.getEmail());
             if(verifyUser == null){
@@ -121,7 +131,7 @@ public class AuthenticationController {
             if(find_item == null){
                 info = userTokensService.insertItem(verifyUser.getId(), token);
             }else{
-                info = userTokensService.updateItem(find_item.getUser_token_id(), token);
+                info = userTokensService.updateItem(find_item.getUserTokenId(), token);
             }
 
             return ResponseEntity.ok(new ApiResponse(true, "Recover Password Email Send", info, HttpStatus.OK.value()));
@@ -135,16 +145,16 @@ public class AuthenticationController {
     }
 
     @PutMapping("/reset_password")
-    public ResponseEntity<ApiResponse> reset_password(@RequestParam("token") String token, @RequestBody RecoverPasswordDto request) {
+    public ResponseEntity<ApiResponse> resetPassword(@RequestParam("token") String token, @RequestBody RecoverPasswordDto request) {
         try {
             UserTokens userToken = userTokensService.findItemByToken(token);
             if (userToken == null) {
                 return ResponseEntity.ok(new ApiResponse(false, "Expired Link", null, HttpStatus.NOT_FOUND.value()));
             }
             
-            Long user_token_id = userToken.getUser_token_id();
+            Long user_token_id = userToken.getUserTokenId();
             String password_crypted = bcryptEncoder.encode(request.getNewPassword());
-            User updatePassword = userService.updatePassword(userToken.getUser_id(), password_crypted);
+            User updatePassword = userService.updatePassword(userToken.getUserId(), password_crypted);
 
             if(updatePassword == null){
                 return ResponseEntity.ok(new ApiResponse(false, "Password can`t be Reset", null, HttpStatus.NOT_MODIFIED.value()));
@@ -156,8 +166,7 @@ public class AuthenticationController {
         } catch (Exception e) {
             String className = this.getClass().getName();
             String methodName = new Throwable().getStackTrace()[0].getMethodName();
-            logger.error("ERROR:"+className + ":" + methodName+" -> "+e.getMessage());
-
+            logger.error("ERROR: "+className + ":" + methodName+" -> "+e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(new ApiResponse(false, "Error Recovering Password", null, HttpStatus.INTERNAL_SERVER_ERROR.value()));
         }

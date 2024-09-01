@@ -24,9 +24,10 @@ public class UserRolesController {
     }
 
     @PostMapping("/user_roles")
-    public ResponseEntity<ApiResponse> get_user_roles(@RequestBody LoginUserDto loginUserDto) {
+    public ResponseEntity<ApiResponse> getUserRoles(@RequestBody LoginUserDto loginUserDto) {
         try {
             User verifyUser = userService.verifyUser(loginUserDto.getEmail());
+
             if(verifyUser == null){
                 return ResponseEntity.ok(new ApiResponse(false, "User Not Found", null, HttpStatus.NOT_FOUND.value()));
             }
