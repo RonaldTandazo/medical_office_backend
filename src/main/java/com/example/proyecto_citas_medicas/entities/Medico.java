@@ -14,6 +14,7 @@ public class Medico {
     private String especialidad;
     private String email;
     private String telefono;
+    private Long user_id;
 
     // Getters y Setters
     public Long getId() {
@@ -54,5 +55,13 @@ public class Medico {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public Long getUserId() {
+        return user_id;
+    }
+
+    public void setUserId(Long user_id) {
+        this.user_id = user_id;
     }
 }

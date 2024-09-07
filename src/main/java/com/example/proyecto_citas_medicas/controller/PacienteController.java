@@ -1,59 +1,52 @@
 package com.example.proyecto_citas_medicas.controller;
 
-import com.example.proyecto_citas_medicas.entities.Paciente;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import com.example.proyecto_citas_medicas.service.PacienteService;
+import com.example.proyecto_citas_medicas.entities.ApiResponse;
+import com.example.proyecto_citas_medicas.entities.Medico;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import com.example.proyecto_citas_medicas.service.MedicoService;
+import com.example.proyecto_citas_medicas.service.PacienteService;
+
 
 @RestController
-@RequestMapping("/api/pacientes")
+@RequestMapping("/api/patients/")
 public class PacienteController {
 
     private final PacienteService pacienteService;
+    private final MedicoService medicoService;
+    private static final Logger logger = LoggerFactory.getLogger(PacienteController.class);
 
-    public PacienteController(PacienteService pacienteService) {
+    public PacienteController(PacienteService pacienteService, MedicoService medicoService) {
         this.pacienteService = pacienteService;
+        this.medicoService = medicoService;
     }
 
-    @GetMapping
-    public List<Paciente> getAllPacientes() {
-        return pacienteService.getAllPacientes();
-    }
+    @GetMapping("patients_by_doctor")
+    public ResponseEntity<ApiResponse> getPacientesByDoctor(@RequestParam("user_id") Long user_id) {
+        try{
+            Medico medico = medicoService.findDoctorByUserId(user_id);
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Paciente> getPacienteById(@PathVariable Long id) {
-        Optional<Paciente> paciente = pacienteService.getPacienteById(id);
-        return paciente.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-    }
+            List<Map<String, Object>> patientsResponse = pacienteService.getPacientesByDoctor(medico.getId());
 
-    @PostMapping
-    public Paciente createPaciente(@RequestBody Paciente paciente) {
-        return pacienteService.savePaciente(paciente);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Paciente> updatePaciente(@PathVariable Long id, @RequestBody Paciente pacienteDetails) {
-        Optional<Paciente> paciente = pacienteService.getPacienteById(id);
-        if (paciente.isPresent()) {
-            Paciente updatedPaciente = paciente.get();
-            updatedPaciente.setNombre(pacienteDetails.getNombre());
-            updatedPaciente.setApellido(pacienteDetails.getApellido());
-            updatedPaciente.setCedula(pacienteDetails.getCedula());
-            updatedPaciente.setDireccion(pacienteDetails.getDireccion());
-            updatedPaciente.setTelefono(pacienteDetails.getTelefono());
-            pacienteService.savePaciente(updatedPaciente);
-            return ResponseEntity.ok(updatedPaciente);
-        } else {
-            return ResponseEntity.notFound().build();
+            if(patientsResponse.size() == 0){
+                return ResponseEntity.ok(new ApiResponse(false, "No Patients Asigned", null, HttpStatus.NOT_FOUND.value()));
+            }
+            
+            return ResponseEntity.ok(new ApiResponse(true, "Information Found", patientsResponse, HttpStatus.OK.value()));
+        }catch(Exception e){
+            String className = this.getClass().getName();
+            String methodName = new Throwable().getStackTrace()[0].getMethodName();
+            logger.error("ERROR:"+className + ":" + methodName+" -> "+e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(new ApiResponse(false, "Invalid Credentials", null, HttpStatus.INTERNAL_SERVER_ERROR.value()));
         }
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePaciente(@PathVariable Long id) {
-        pacienteService.deletePaciente(id);
-        return ResponseEntity.noContent().build();
     }
 }

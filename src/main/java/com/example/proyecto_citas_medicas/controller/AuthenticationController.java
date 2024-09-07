@@ -72,6 +72,7 @@ public class AuthenticationController {
             User authenticatedUser = authenticationService.authenticate(loginUserDto);
 
             Map<String, Object> extraClaims = new HashMap<>();
+            extraClaims.put("user_id", authenticatedUser.getId());
             extraClaims.put("username", authenticatedUser.getUsername());
             extraClaims.put("identification", authenticatedUser.getIdentification());
             extraClaims.put("gender", authenticatedUser.getGender());
@@ -125,7 +126,6 @@ public class AuthenticationController {
             emailService.sendPasswordResetEmail(recover.getEmail(), token);
 
             UserTokens find_item = userTokensService.findItemByUserId(verifyUser.getId());
-            logger.info("item: "+find_item);
             UserTokens info = null;
 
             if(find_item == null){
@@ -144,7 +144,7 @@ public class AuthenticationController {
         }
     }
 
-    @PutMapping("/reset_password")
+    @PutMapping("reset_password")
     public ResponseEntity<ApiResponse> resetPassword(@RequestParam("token") String token, @RequestBody RecoverPasswordDto request) {
         try {
             UserTokens userToken = userTokensService.findItemByToken(token);

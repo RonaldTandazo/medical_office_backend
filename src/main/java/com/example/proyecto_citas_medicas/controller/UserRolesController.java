@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/")
 public class UserRolesController {
 
     private static final Logger logger = LoggerFactory.getLogger(UserRolesController.class);
@@ -23,7 +23,7 @@ public class UserRolesController {
         this.userService = userService;
     }
 
-    @PostMapping("/user_roles")
+    @PostMapping("user_roles")
     public ResponseEntity<ApiResponse> getUserRoles(@RequestBody LoginUserDto loginUserDto) {
         try {
             User verifyUser = userService.verifyUser(loginUserDto.getEmail());

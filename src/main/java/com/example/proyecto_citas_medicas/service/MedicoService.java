@@ -16,6 +16,10 @@ public class MedicoService {
         this.medicoRepository = medicoRepository;
     }
 
+    public Medico findDoctorByUserId(Long user_id){
+        return medicoRepository.findMedicoByUserId(user_id);
+    }
+
     public List<Medico> findAll() {
         return medicoRepository.findAll();
     }
