@@ -16,7 +16,7 @@ public class Facturacion {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "paciente_id")
-    private Paciente paciente;
+    private Patient paciente;
 
     // Getters y Setters
 
@@ -60,11 +60,11 @@ public class Facturacion {
         this.cedulaFacturacion = cedulaFacturacion;
     }
 
-    public Paciente getPaciente() {
+    public Patient getPaciente() {
         return paciente;
     }
 
-    public void setPaciente(Paciente paciente) {
+    public void setPaciente(Patient paciente) {
         this.paciente = paciente;
     }
 }

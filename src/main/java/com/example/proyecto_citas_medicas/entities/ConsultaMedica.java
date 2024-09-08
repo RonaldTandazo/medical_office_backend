@@ -18,7 +18,7 @@ public class ConsultaMedica {
 
     @ManyToOne
     @JoinColumn(name = "paciente_id", nullable = false)
-    private Paciente paciente;
+    private Patient paciente;
 
     private LocalDateTime fechaHora;
 
@@ -42,11 +42,11 @@ public class ConsultaMedica {
         this.medico = medico;
     }
 
-    public Paciente getPaciente() {
+    public Patient getPaciente() {
         return paciente;
     }
 
-    public void setPaciente(Paciente paciente) {
+    public void setPaciente(Patient paciente) {
         this.paciente = paciente;
     }
 
