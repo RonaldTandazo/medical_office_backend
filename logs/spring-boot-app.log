@@ -291,3 +291,113 @@
 2024-09-24 23:23:58 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
 2024-09-24 23:23:58 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@6929bf90]
 2024-09-24 23:23:58 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-09-24 23:32:23 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:32:23 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:32:23 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:32:23 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?user_id=11&page=0&size=5", parameters={masked}
+2024-09-24 23:32:23 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PacienteController#getPacientesByDoctor(Long, int, int)
+2024-09-24 23:32:23 INFO  c.e.p.controller.PacienteController - page: 0
+2024-09-24 23:32:23 INFO  c.e.p.controller.PacienteController - patients: 0
+2024-09-24 23:32:23 INFO  c.e.p.controller.PacienteController - patients: []
+2024-09-24 23:32:23 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-09-24 23:32:23 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@215982d3]
+2024-09-24 23:32:23 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-09-24 23:32:43 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:32:43 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:32:43 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:32:43 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?user_id=11&page=0&size=5", parameters={masked}
+2024-09-24 23:32:43 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PacienteController#getPacientesByDoctor(Long, int, int)
+2024-09-24 23:32:44 INFO  c.e.p.controller.PacienteController - page: 0
+2024-09-24 23:32:44 INFO  c.e.p.controller.PacienteController - patients: 0
+2024-09-24 23:32:44 INFO  c.e.p.controller.PacienteController - patients: []
+2024-09-24 23:32:44 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-09-24 23:32:44 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@6108abef]
+2024-09-24 23:32:44 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-09-24 23:34:18 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:34:18 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:34:18 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:34:18 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?user_id=11&page=0&size=5", parameters={masked}
+2024-09-24 23:34:18 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PacienteController#getPacientesByDoctor(Long, int, int)
+2024-09-24 23:34:18 INFO  c.e.p.controller.PacienteController - page: 0
+2024-09-24 23:34:18 INFO  c.e.p.controller.PacienteController - patients: 0
+2024-09-24 23:34:18 INFO  c.e.p.controller.PacienteController - patients: []
+2024-09-24 23:34:18 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-09-24 23:34:18 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@30f6170d]
+2024-09-24 23:34:18 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-09-24 23:35:35 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:35:35 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:35:35 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:35:35 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?user_id=11&page=0&size=5", parameters={masked}
+2024-09-24 23:35:35 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PacienteController#getPacientesByDoctor(Long, int, int)
+2024-09-24 23:35:35 INFO  c.e.p.controller.PacienteController - page: 0
+2024-09-24 23:35:35 INFO  c.e.p.controller.PacienteController - patients: 0
+2024-09-24 23:35:35 INFO  c.e.p.controller.PacienteController - patients: []
+2024-09-24 23:35:35 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-09-24 23:35:35 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@2cf6e0c3]
+2024-09-24 23:35:35 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-09-24 23:40:26 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:40:26 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:40:26 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:40:26 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?user_id=11&page=0&size=5", parameters={masked}
+2024-09-24 23:40:26 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PacienteController#getPacientesByDoctor(Long, int, int)
+2024-09-24 23:40:26 INFO  c.e.p.controller.PacienteController - page: 0
+2024-09-24 23:40:26 INFO  c.e.p.controller.PacienteController - patients: 0
+2024-09-24 23:40:26 INFO  c.e.p.controller.PacienteController - patients: []
+2024-09-24 23:40:26 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-09-24 23:40:26 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@85f3d26]
+2024-09-24 23:40:26 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-09-24 23:41:52 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:41:52 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:41:52 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:41:52 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?user_id=11&page=0&size=5", parameters={masked}
+2024-09-24 23:41:52 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PacienteController#getPacientesByDoctor(Long, int, int)
+2024-09-24 23:41:52 INFO  c.e.p.controller.PacienteController - page: 0
+2024-09-24 23:41:52 INFO  c.e.p.controller.PacienteController - patients: 0
+2024-09-24 23:41:52 INFO  c.e.p.controller.PacienteController - patients: []
+2024-09-24 23:41:52 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-09-24 23:41:52 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@4a961463]
+2024-09-24 23:41:52 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-09-24 23:45:34 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:45:34 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:45:35 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:45:35 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?user_id=11&page=0&size=5", parameters={masked}
+2024-09-24 23:45:35 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PacienteController#getPacientesByDoctor(Long, int, int)
+2024-09-24 23:45:35 INFO  c.e.p.controller.PacienteController - page: 0
+2024-09-24 23:45:35 INFO  c.e.p.controller.PacienteController - patients: 0
+2024-09-24 23:45:35 INFO  c.e.p.controller.PacienteController - patients: []
+2024-09-24 23:45:35 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-09-24 23:45:35 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@2e8d7e7c]
+2024-09-24 23:45:35 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-09-24 23:45:51 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:45:51 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:45:51 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:45:51 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?user_id=11&page=0&size=5", parameters={masked}
+2024-09-24 23:45:51 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PacienteController#getPacientesByDoctor(Long, int, int)
+2024-09-24 23:45:51 INFO  c.e.p.controller.PacienteController - page: 0
+2024-09-24 23:45:51 INFO  c.e.p.controller.PacienteController - patients: 0
+2024-09-24 23:45:51 INFO  c.e.p.controller.PacienteController - patients: []
+2024-09-24 23:45:51 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-09-24 23:45:51 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@615e4870]
+2024-09-24 23:45:51 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-09-24 23:46:45 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:46:45 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:46:45 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:46:45 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?user_id=11&page=0&size=5", parameters={masked}
+2024-09-24 23:46:45 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PacienteController#getPacientesByDoctor(Long, int, int)
+2024-09-24 23:46:45 INFO  c.e.p.controller.PacienteController - page: 0
+2024-09-24 23:46:45 INFO  c.e.p.controller.PacienteController - patients: 0
+2024-09-24 23:46:45 INFO  c.e.p.controller.PacienteController - patients: []
+2024-09-24 23:46:45 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-09-24 23:46:45 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@55d2a1dd]
+2024-09-24 23:46:45 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-09-24 23:47:34 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:47:34 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:47:34 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?user_id=11&page=0&size=5
+2024-09-24 23:47:34 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?user_id=11&page=0&size=5", parameters={masked}
+2024-09-24 23:47:34 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PacienteController#getPacientesByDoctor(Long, int, int)
+2024-09-24 23:47:34 INFO  c.e.p.controller.PacienteController - page: 0
+2024-09-24 23:47:34 INFO  c.e.p.controller.PacienteController - patients: 0
+2024-09-24 23:47:34 INFO  c.e.p.controller.PacienteController - patients: []
+2024-09-24 23:47:34 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-09-24 23:47:34 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@290f245e]
+2024-09-24 23:47:34 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
