@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "pacientes")
+@Table(name = "patients")
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +18,9 @@ public class Patient {
     private Double weight;
     private Double height;
     private int doctor_id;
+    private Character gender;
+    private int age;
+    private String disease;
 
     @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Facturacion> facturaciones;
@@ -102,5 +105,29 @@ public class Patient {
 
     public void setDocto_Id(int doctor_id){
         this.doctor_id = doctor_id;
+    }
+
+    public Character getGender() {
+        return gender;
+    }
+
+    public void setGender(Character gender) {
+        this.gender = gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getDisease() {
+        return disease;
+    }
+
+    public void setDisease(String disease) {
+        this.disease = disease;
     }
 }

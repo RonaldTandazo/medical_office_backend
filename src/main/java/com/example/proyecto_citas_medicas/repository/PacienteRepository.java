@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PacienteRepository extends JpaRepository<Patient, Long> {
 
-    @Query(value = "SELECT * FROM pacientes WHERE doctor_id = :doctor_id",
-        countQuery = "SELECT count(*) FROM pacientes WHERE doctor_id = :doctor_id", 
+    @Query(value = "SELECT * FROM patients WHERE doctor_id = :doctor_id",
+        countQuery = "SELECT count(*) FROM patients WHERE doctor_id = :doctor_id", 
         nativeQuery = true)    
     Page<Map<String, Object>> findPatientsByDoctorId(@Param("doctor_id") Long doctor_id, Pageable pageable);
 }
