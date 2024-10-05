@@ -8,19 +8,19 @@ import java.util.Set;
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private Long patient_id;
     private String name;
     private String lastname;
     private String identification;
-    private String direction;
-    private String phone;
+    private Long age;
     private Double weight;
     private Double height;
-    private int doctor_id;
     private Character gender;
-    private int age;
+    private String phone;
+    private String direction;
+    private String email;
     private String disease;
+    private Long doctorId;
 
     @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Facturacion> facturaciones;
@@ -28,11 +28,11 @@ public class Patient {
     // Getters y Setters
 
     public Long getId() {
-        return id;
+        return patient_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long patient_id) {
+        this.patient_id = patient_id;
     }
 
     public String getName() {
@@ -99,12 +99,12 @@ public class Patient {
         this.height = height;
     }
 
-    public int getDocto_Id(){
-        return doctor_id;
+    public Long getDoctorId(){
+        return doctorId;
     }
 
-    public void setDocto_Id(int doctor_id){
-        this.doctor_id = doctor_id;
+    public void setDoctorId(Long doctorId){
+        this.doctorId = doctorId;
     }
 
     public Character getGender() {
@@ -115,12 +115,20 @@ public class Patient {
         this.gender = gender;
     }
 
-    public int getAge() {
+    public Long getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Long age) {
         this.age = age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getDisease() {
