@@ -6,22 +6,24 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.example.proyecto_citas_medicas.entities.Patient;
-import com.example.proyecto_citas_medicas.repository.PacienteRepository;
+import com.example.proyecto_citas_medicas.repository.PatientRepository;
+import com.example.proyecto_citas_medicas.specifications.PatientSpecification;
+
 import java.util.Map;
 import java.util.Optional;
 
 @Service
 public class PacienteService {
 
-    private final PacienteRepository patientRepository;
+    private final PatientRepository patientRepository;
 
-    public PacienteService(PacienteRepository patientRepository) {
+    public PacienteService(PatientRepository patientRepository) {
         this.patientRepository = patientRepository;
     }
 
-    public Page<Map<String, Object>> getPacientesByDoctor(Long user_id, int page, int size) {
+    public Page</*Map<String, Object>*/Patient> getPacientesByDoctor(Long user_id, String identification, String patientName, Character gender, int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
-        return patientRepository.findPatientsByDoctorId(user_id, pageable);
+        return patientRepository.findAll(PatientSpecification.getPacientesByDoctor(user_id, identification, patientName, gender), pageable);
     }
 
     public Patient store(Patient patient){

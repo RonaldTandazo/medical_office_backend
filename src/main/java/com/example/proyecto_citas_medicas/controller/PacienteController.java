@@ -31,9 +31,15 @@ public class PacienteController {
     }
 
     @GetMapping("patients_by_doctor")
-    public ResponseEntity<ApiResponse> getPacientesByDoctor(@RequestParam("user_id") Long user_id, @RequestParam("page") int page, @RequestParam("size") int size){
+    public ResponseEntity<ApiResponse> getPacientesByDoctor(
+        @RequestParam(value = "identification", required = false) String identification,
+        @RequestParam(value = "patient", required = false) String patient,
+        @RequestParam(value = "gender", required = false) Character gender,
+        @RequestParam(value = "doctor_id", required = true) Long doctorId,
+        @RequestParam("page") int page, @RequestParam("size") int size
+    ){
         try{
-            Page<Map<String, Object>> patientsResponse = patienteService.getPacientesByDoctor(user_id, page, size);
+            Page</*Map<String, Object>*/Patient> patientsResponse = patienteService.getPacientesByDoctor(doctorId, identification, patient, gender, page, size);
 
             return ResponseEntity.ok(new ApiResponse(true, "Information Found", patientsResponse, HttpStatus.OK.value()));
         }catch(Exception e){
