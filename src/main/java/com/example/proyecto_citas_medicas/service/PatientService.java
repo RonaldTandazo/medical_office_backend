@@ -13,11 +13,11 @@ import java.util.Map;
 import java.util.Optional;
 
 @Service
-public class PacienteService {
+public class PatientService {
 
     private final PatientRepository patientRepository;
 
-    public PacienteService(PatientRepository patientRepository) {
+    public PatientService(PatientRepository patientRepository) {
         this.patientRepository = patientRepository;
     }
 

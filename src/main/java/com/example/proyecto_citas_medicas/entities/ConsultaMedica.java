@@ -14,7 +14,7 @@ public class ConsultaMedica {
 
     @ManyToOne
     @JoinColumn(name = "medico_id", nullable = false)
-    private Medico medico;
+    private Doctor medico;
 
     @ManyToOne
     @JoinColumn(name = "paciente_id", nullable = false)
@@ -34,11 +34,11 @@ public class ConsultaMedica {
         this.id = id;
     }
 
-    public Medico getMedico() {
+    public Doctor getMedico() {
         return medico;
     }
 
-    public void setMedico(Medico medico) {
+    public void setMedico(Doctor medico) {
         this.medico = medico;
     }
 

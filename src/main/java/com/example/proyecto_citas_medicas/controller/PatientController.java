@@ -1,7 +1,7 @@
 package com.example.proyecto_citas_medicas.controller;
 
 import com.example.proyecto_citas_medicas.entities.ApiResponse;
-import com.example.proyecto_citas_medicas.entities.Medico;
+import com.example.proyecto_citas_medicas.entities.Doctor;
 import com.example.proyecto_citas_medicas.entities.Patient;
 
 import java.util.Map;
@@ -13,19 +13,19 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.example.proyecto_citas_medicas.service.MedicoService;
-import com.example.proyecto_citas_medicas.service.PacienteService;
+import com.example.proyecto_citas_medicas.service.DoctorService;
+import com.example.proyecto_citas_medicas.service.PatientService;
 
 
 @RestController
 @RequestMapping("/api/patients/")
-public class PacienteController {
+public class PatientController {
 
-    private final PacienteService patienteService;
-    private final MedicoService medicoService;
-    private static final Logger logger = LoggerFactory.getLogger(PacienteController.class);
+    private final PatientService patienteService;
+    private final DoctorService medicoService;
+    private static final Logger logger = LoggerFactory.getLogger(PatientController.class);
 
-    public PacienteController(PacienteService patienteService, MedicoService medicoService) {
+    public PatientController(PatientService patienteService, DoctorService medicoService) {
         this.patienteService = patienteService;
         this.medicoService = medicoService;
     }
