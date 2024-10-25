@@ -38,4 +38,8 @@ public class UserService {
 
         return userRepository.updateItem(userId, username, identification, gender, age, phonenumber);
     }
+
+    public List<Map<String, Object>> getPermissions(Long user_id){
+        return userRepository.getPermissions(user_id);
+    }
 }

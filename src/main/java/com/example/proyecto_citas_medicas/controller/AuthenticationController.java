@@ -14,6 +14,7 @@ import com.example.proyecto_citas_medicas.service.UserTokensService;
 import com.example.proyecto_citas_medicas.utils.JwtUtil;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import org.slf4j.Logger;
@@ -55,7 +56,7 @@ public class AuthenticationController {
     public ResponseEntity<ApiResponse> register(@RequestBody RegisterUserDto registerUserDto) {
         try{
             User registeredUser = authenticationService.signup(registerUserDto);
-
+            
             return ResponseEntity.ok(new ApiResponse(true, "Signed Up Successfully", registeredUser, HttpStatus.OK.value()));
         }catch(Exception e){
             String className = this.getClass().getName();
@@ -70,14 +71,19 @@ public class AuthenticationController {
     public ResponseEntity<ApiResponse> authenticate(@RequestBody LoginUserDto loginUserDto) {
         try{
             User authenticatedUser = authenticationService.authenticate(loginUserDto);
+            List<Map<String, Object>> permissions = userService.getPermissions(authenticatedUser.getId());
 
+            Map<String, Object> userData = new HashMap<>();
+            userData.put("user_id", authenticatedUser.getId());
+            userData.put("username", authenticatedUser.getUsername());
+            userData.put("identification", authenticatedUser.getIdentification());
+            userData.put("gender", authenticatedUser.getGender());
+            userData.put("age", authenticatedUser.getAge());
+            userData.put("phonenumber", authenticatedUser.getPhonenumber());
+            
             Map<String, Object> extraClaims = new HashMap<>();
-            extraClaims.put("user_id", authenticatedUser.getId());
-            extraClaims.put("username", authenticatedUser.getUsername());
-            extraClaims.put("identification", authenticatedUser.getIdentification());
-            extraClaims.put("gender", authenticatedUser.getGender());
-            extraClaims.put("age", authenticatedUser.getAge());
-            extraClaims.put("phonenumber", authenticatedUser.getPhonenumber());
+            extraClaims.put("user_data", userData);
+            extraClaims.put("permissions", permissions);
             
             String jwtToken = jwtUtil.generateToken(extraClaims, authenticatedUser);
             

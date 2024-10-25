@@ -1,88 +1,75 @@
-2024-10-19 17:55:09 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/specialities
-2024-10-19 17:55:09 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/specialities
-2024-10-19 17:55:09 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/specialities
-2024-10-19 17:55:09 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/specialities", parameters={}
-2024-10-19 17:55:09 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.SpecialityController#getAllSpecialities()
-2024-10-19 17:55:09 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-10-19 17:55:09 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@45ae50de]
-2024-10-19 17:55:09 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-10-19 17:55:12 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/doctors_by_speciality?speciality_id=1
-2024-10-19 17:55:12 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/doctors/doctors_by_speciality?speciality_id=1
-2024-10-19 17:55:12 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/doctors/doctors_by_speciality?speciality_id=1
-2024-10-19 17:55:12 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/doctors/doctors_by_speciality?speciality_id=1", parameters={masked}
-2024-10-19 17:55:12 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#getDoctorsBySpeciality(Long)
-2024-10-19 17:55:12 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-10-19 17:55:12 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@768fba8b]
-2024-10-19 17:55:12 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-10-19 17:57:13 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/specialities
-2024-10-19 17:57:13 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/specialities
-2024-10-19 17:57:13 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/specialities
-2024-10-19 17:57:13 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/specialities", parameters={}
-2024-10-19 17:57:13 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.SpecialityController#getAllSpecialities()
-2024-10-19 17:57:13 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-10-19 17:57:13 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@1b283926]
-2024-10-19 17:57:13 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-10-19 17:57:16 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/specialities
-2024-10-19 17:57:16 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/specialities
-2024-10-19 17:57:16 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/specialities", parameters={}
-2024-10-19 17:57:16 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.SpecialityController#getAllSpecialities()
-2024-10-19 17:57:16 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-10-19 17:57:16 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@77a12aec]
-2024-10-19 17:57:16 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-10-19 17:57:46 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/specialities
-2024-10-19 17:57:46 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/specialities
-2024-10-19 17:57:46 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/specialities
-2024-10-19 17:57:46 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/specialities", parameters={}
-2024-10-19 17:57:46 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.SpecialityController#getAllSpecialities()
-2024-10-19 17:57:46 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-10-19 17:57:46 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@5465e046]
-2024-10-19 17:57:46 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-10-19 17:57:55 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/specialities
-2024-10-19 17:57:55 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/specialities
-2024-10-19 17:57:55 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/specialities
-2024-10-19 17:57:55 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/specialities", parameters={}
-2024-10-19 17:57:55 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.SpecialityController#getAllSpecialities()
-2024-10-19 17:57:55 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-10-19 17:57:55 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@52de0777]
-2024-10-19 17:57:55 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-10-19 17:58:00 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/specialities
-2024-10-19 17:58:00 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/specialities
-2024-10-19 17:58:00 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/specialities", parameters={}
-2024-10-19 17:58:00 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.SpecialityController#getAllSpecialities()
-2024-10-19 17:58:00 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-10-19 17:58:00 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@3745d19d]
-2024-10-19 17:58:00 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-10-19 17:58:05 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/doctors_by_speciality?speciality_id=2
-2024-10-19 17:58:05 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/doctors/doctors_by_speciality?speciality_id=2
-2024-10-19 17:58:05 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/doctors/doctors_by_speciality?speciality_id=2
-2024-10-19 17:58:05 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/doctors/doctors_by_speciality?speciality_id=2", parameters={masked}
-2024-10-19 17:58:05 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#getDoctorsBySpeciality(Long)
-2024-10-19 17:58:05 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-10-19 17:58:05 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@6cb064f0]
-2024-10-19 17:58:05 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-10-19 17:58:09 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/doctors_by_speciality?speciality_id=3
-2024-10-19 17:58:09 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/doctors/doctors_by_speciality?speciality_id=3
-2024-10-19 17:58:09 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/doctors/doctors_by_speciality?speciality_id=3
-2024-10-19 17:58:09 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/doctors/doctors_by_speciality?speciality_id=3", parameters={masked}
-2024-10-19 17:58:09 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#getDoctorsBySpeciality(Long)
-2024-10-19 17:58:09 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-10-19 17:58:09 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@f05b53b]
-2024-10-19 17:58:09 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-10-19 17:58:12 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/doctors_by_speciality?speciality_id=1
-2024-10-19 17:58:12 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/doctors/doctors_by_speciality?speciality_id=1
-2024-10-19 17:58:12 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/doctors/doctors_by_speciality?speciality_id=1
-2024-10-19 17:58:12 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/doctors/doctors_by_speciality?speciality_id=1", parameters={masked}
-2024-10-19 17:58:12 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#getDoctorsBySpeciality(Long)
-2024-10-19 17:58:12 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-10-19 17:58:12 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@2311f2c8]
-2024-10-19 17:58:12 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-10-19 17:58:25 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/user_roles
-2024-10-19 17:58:25 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/user_roles
-2024-10-19 17:58:25 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2024-10-19 17:58:25 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/user_roles
-2024-10-19 17:58:25 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/user_roles", parameters={}
-2024-10-19 17:58:25 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.UserRolesController#getUserRoles(LoginUserDto)
-2024-10-19 17:58:25 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.proyecto_citas_medicas.dtos.LoginUserDto@439b5804]
-2024-10-19 17:58:25 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-10-19 17:58:25 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@446e58f]
-2024-10-19 17:58:25 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-10-24 22:46:03 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/user_roles
+2024-10-24 22:46:03 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/user_roles
+2024-10-24 22:46:03 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-10-24 22:46:03 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/user_roles
+2024-10-24 22:46:03 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/user_roles", parameters={}
+2024-10-24 22:46:03 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.UserRolesController#getUserRoles(LoginUserDto)
+2024-10-24 22:46:03 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.proyecto_citas_medicas.dtos.LoginUserDto@a74f996]
+2024-10-24 22:46:03 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-10-24 22:46:03 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@bfa977c]
+2024-10-24 22:46:03 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-10-24 22:54:30 INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-10-24 22:54:30 INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2024-10-24 22:54:30 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-24 22:54:30 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-34 - Shutdown initiated...
+2024-10-24 22:54:30 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-34 - Shutdown completed.
+2024-10-24 22:54:30 INFO  c.e.p.ProyectoCitasMedicasApplication - Starting ProyectoCitasMedicasApplication using Java 22.0.2 with PID 12776 (C:\Users\Ronald\Medical Office\medical_office_backend\bin\main started by Ronald in C:\Users\Ronald\Medical Office\medical_office_backend)
+2024-10-24 22:54:30 INFO  c.e.p.ProyectoCitasMedicasApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.AccountPlanRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.AppointmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.CertificadoMedicoRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.ColaboradorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.ComprobanteVentaRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.ConsultaMedicaRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.DoctorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.FacturacionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.GeneralParameterRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.HistoriaClinicaRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.LibroDiarioRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.PatientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.PermissionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.RoleRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.SpecialityRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.TransaccionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UserTokensRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 0 JDBC repository interfaces.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-24 22:54:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 18 JPA repository interfaces.
+2024-10-24 22:54:32 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-10-24 22:54:32 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-10-24 22:54:32 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2024-10-24 22:54:32 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2024-10-24 22:54:32 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-24 22:54:32 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-24 22:54:32 INFO  o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-24 22:54:32 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2158 ms
+2024-10-24 22:54:32 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-24 22:54:32 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-24 22:54:32 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-24 22:54:32 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-35 - Starting...
+2024-10-24 22:54:32 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-35 - Added connection org.postgresql.jdbc.PgConnection@5f015e85
+2024-10-24 22:54:32 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-35 - Start completed.
+2024-10-24 22:54:32 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-24 22:54:33 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-24 22:54:33 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-24 22:54:33 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-24 22:54:33 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-10-24 22:54:33 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-10-24 22:54:33 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-10-24 22:54:33 WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-10-24 22:54:33 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 69 mappings in 'requestMappingHandlerMapping'
+2024-10-24 22:54:33 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-10-24 22:54:33 DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-10-24 22:54:33 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-10-24 22:54:33 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-10-24 22:54:33 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2024-10-24 22:54:33 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2024-10-24 22:54:33 INFO  c.e.p.ProyectoCitasMedicasApplication - Started ProyectoCitasMedicasApplication in 3.363 seconds (process running for 8125.045)
+2024-10-24 22:54:33 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-10-24 23:00:27 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-24 23:00:27 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-35 - Shutdown initiated...
+2024-10-24 23:00:27 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-35 - Shutdown completed.
