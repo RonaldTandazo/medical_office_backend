@@ -7,23 +7,31 @@ import jakarta.persistence.*;
 public class Permission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long permissionId;
+    private Long submenuId;
+    private Character status;
 
-    private String name;
-
-
-    // Getters y Setters
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
+    public Long getPermissionId() {
+        return this.permissionId;
     }
 
-    public String getName() {
-        return name;
+    public void setPermissionId(Long permissionId) {
+        this.permissionId = permissionId;
     }
-    public void setName(String name) {
-        this.name = name;
+
+    public Long getSubmenuId() {
+        return this.submenuId;
+    }
+
+    public void setSubmenuId(Long submenuId) {
+        this.submenuId = submenuId;
+    }
+
+    public Character getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(Character status) {
+        this.status = status;
     }
 }
