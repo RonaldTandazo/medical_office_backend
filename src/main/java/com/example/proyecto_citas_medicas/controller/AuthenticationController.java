@@ -74,6 +74,7 @@ public class AuthenticationController {
 
             Map<String, Object> userData = new HashMap<>();
             userData.put("user_id", authenticatedUser.getId());
+            userData.put("email", authenticatedUser.getEmail());
             userData.put("username", authenticatedUser.getUsername());
             userData.put("identification", authenticatedUser.getIdentification());
             userData.put("gender", authenticatedUser.getGender());
