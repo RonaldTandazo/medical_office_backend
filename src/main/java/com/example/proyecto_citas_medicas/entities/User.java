@@ -11,7 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class User implements UserDetails{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long user_id;
+    private Long userId;
     private String username;
     private String email;
     private String identification;
@@ -25,7 +25,7 @@ public class User implements UserDetails{
     @Override
     public String toString() {
         return "User{" +
-            "user_id=" + user_id +
+            "user_id=" + userId +
             ", username='" + username + '\'' +
             ", email='" + email + '\'' +
             ", identification='" + identification + '\'' +
@@ -40,10 +40,10 @@ public class User implements UserDetails{
 
     // Getters y Setters
     public Long getId() {
-        return user_id;
+        return userId;
     }
-    public void setId(Long user_id) {
-        this.user_id = user_id;
+    public void setId(Long userId) {
+        this.userId = userId;
     }
 
     public String getUsername() {

@@ -9,9 +9,9 @@ public class Speciality {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long specialityId;
-    private String description;
+    private String name;
+    private Character status;
 
-    // Getters y Setters
     public Long getId() {
         return specialityId;
     }
@@ -20,11 +20,19 @@ public class Speciality {
         this.specialityId = specialityId;
     }
 
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Character getStatus() {
+        return status;
+    }
+
+    public void setName(Character status) {
+        this.status = status;
     }
 }

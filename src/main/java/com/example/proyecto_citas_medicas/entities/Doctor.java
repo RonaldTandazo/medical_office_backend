@@ -8,60 +8,58 @@ public class Doctor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String nombre;
-    private String especialidad;
+    private Long doctorId;
+    private String name;
     private String email;
-    private String telefono;
-    private Long user_id;
+    private String phone;
+    private Long userId;
+    private Character status;
 
-    // Getters y Setters
-    public Long getId() {
-        return id;
+    public Long getDoctorId() {
+        return this.doctorId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setDoctorId(Long doctorId) {
+        this.doctorId = doctorId;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return this.name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getEspecialidad() {
-        return especialidad;
-    }
-
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getPhone() {
+        return this.phone;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public Long getUserId() {
-        return user_id;
+        return this.userId;
     }
 
-    public void setUserId(Long user_id) {
-        this.user_id = user_id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public Character getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(Character status) {
+        this.status = status;
     }
 }

@@ -2,7 +2,7 @@ package com.example.proyecto_citas_medicas.dtos;
 
 public class LoginUserDto {
     private String email;
-    
+    private Long roleId;
     private String password;
     
     public String getEmail() {
@@ -17,5 +17,12 @@ public class LoginUserDto {
     }
     public void setPassword(String password){
         this.password = password;
+    }
+
+    public Long getRoleId(){
+        return roleId;
+    }
+    public void setRoleId(Long roleId){
+        this.roleId = roleId;
     }
 }

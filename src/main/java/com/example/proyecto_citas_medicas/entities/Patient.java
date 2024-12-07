@@ -1,14 +1,13 @@
 package com.example.proyecto_citas_medicas.entities;
 
 import jakarta.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "patients")
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long patient_id;
+    private Long patientId;
     private String name;
     private String lastname;
     private String identification;
@@ -19,20 +18,14 @@ public class Patient {
     private String phone;
     private String direction;
     private String email;
-    private String disease;
-    private Long doctorId;
+    private Character status;
 
-    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Facturacion> facturaciones;
-
-    // Getters y Setters
-
-    public Long getId() {
-        return patient_id;
+    public Long getPatientId() {
+        return patientId;
     }
 
-    public void setId(Long patient_id) {
-        this.patient_id = patient_id;
+    public void setPatientId(Long patientId) {
+        this.patientId = patientId;
     }
 
     public String getName() {
@@ -75,14 +68,6 @@ public class Patient {
         this.phone = phone;
     }
 
-    public Set<Facturacion> getFacturaciones() {
-        return facturaciones;
-    }
-
-    public void setFacturaciones(Set<Facturacion> facturaciones) {
-        this.facturaciones = facturaciones;
-    }
-
     public Double getWeight(){
         return weight;
     }
@@ -97,14 +82,6 @@ public class Patient {
 
     public void setHeight(Double height){
         this.height = height;
-    }
-
-    public Long getDoctorId(){
-        return doctorId;
-    }
-
-    public void setDoctorId(Long doctorId){
-        this.doctorId = doctorId;
     }
 
     public Character getGender() {
@@ -131,11 +108,11 @@ public class Patient {
         this.email = email;
     }
 
-    public String getDisease() {
-        return disease;
+    public Character getStatua() {
+        return status;
     }
 
-    public void setDisease(String disease) {
-        this.disease = disease;
+    public void setStatua(Character status) {
+        this.status = status;
     }
 }

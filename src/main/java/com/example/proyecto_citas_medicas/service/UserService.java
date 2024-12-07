@@ -9,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.example.proyecto_citas_medicas.controller.AuthenticationController;
 import com.example.proyecto_citas_medicas.entities.User;
 import com.example.proyecto_citas_medicas.repository.UserRepository;
 
@@ -46,8 +45,8 @@ public class UserService {
         return userRepository.updateItem(userId, username, identification, gender, age, phonenumber);
     }
 
-    public List<Map<String, Object>> getPermissions(Long user_id) {
-        List<Map<String, Object>> menus = userRepository.getAsignedMenus(user_id);
+    public List<Map<String, Object>> getPermissions(Long user_id, Long role_id) {
+        List<Map<String, Object>> menus = userRepository.getAsignedMenus(user_id, role_id);
 
         List<Map<String, Object>> mutableMenus = new ArrayList<>();
 
@@ -56,7 +55,7 @@ public class UserService {
 
             Long menu_id = (Long) mutableMenu.get("menu_id");
 
-            List<Map<String, Object>> submenus = userRepository.getPermissions(user_id, menu_id);
+            List<Map<String, Object>> submenus = userRepository.getPermissions(user_id, role_id, menu_id);
 
             mutableMenu.put("submenus", submenus);
             mutableMenus.add(mutableMenu);

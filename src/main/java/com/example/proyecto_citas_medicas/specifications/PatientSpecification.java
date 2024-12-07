@@ -5,14 +5,12 @@ import jakarta.persistence.criteria.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.jpa.domain.Specification;
-
-import com.example.proyecto_citas_medicas.controller.PatientController;
 import com.example.proyecto_citas_medicas.entities.Patient;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PatientSpecification {
-    private static final Logger logger = LoggerFactory.getLogger(PatientController.class);
+    private static final Logger logger = LoggerFactory.getLogger(PatientSpecification.class);
 
     public static Specification<Patient> getPacientesByDoctor(Long user_id, String identification, String fullName, Character gender) {
         return (Root<Patient> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) -> {

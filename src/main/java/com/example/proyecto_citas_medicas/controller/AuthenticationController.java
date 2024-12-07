@@ -70,7 +70,7 @@ public class AuthenticationController {
     public ResponseEntity<ApiResponse> authenticate(@RequestBody LoginUserDto loginUserDto) {
         try{
             User authenticatedUser = authenticationService.authenticate(loginUserDto);
-            List<Map<String, Object>> permissions = userService.getPermissions(authenticatedUser.getId());
+            List<Map<String, Object>> permissions = userService.getPermissions(authenticatedUser.getId(), loginUserDto.getRoleId());
 
             Map<String, Object> userData = new HashMap<>();
             userData.put("user_id", authenticatedUser.getId());

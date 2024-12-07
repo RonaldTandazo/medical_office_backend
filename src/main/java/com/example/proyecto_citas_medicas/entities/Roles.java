@@ -2,30 +2,29 @@ package com.example.proyecto_citas_medicas.entities;
 
 import jakarta.persistence.*;
 
-import java.math.BigInteger;
-
 @Entity
 @Table(name = "roles")
-public class Role {
+public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long role_id;
+    private Long roleId;
     private String name;
+    private Character status;
 
     @Override
     public String toString() {
         return "Rol{" +
-            "role_id=" + role_id +
+            "role_id=" + roleId +
             ", name='" + name + '\'' +
         '}';
     }
 
     // Getters y Setters
     public Long getId() {
-        return role_id;
+        return roleId;
     }
-    public void setId(Long role_id) {
-        this.role_id = role_id;
+    public void setId(Long roleId) {
+        this.roleId = roleId;
     }
 
     public String getName() {
@@ -35,9 +34,16 @@ public class Role {
         this.name = name;
     }
 
+    public Character getStatus() {
+        return status;
+    }
+    public void setStatus(Character status) {
+        this.status = status;
+    }
+
     // Interfaz interna RoleProjection
     public interface RoleProjection {
-        BigInteger getRole_id();
+        Long getRole_id();
         String getName();
     }
 }

@@ -45,8 +45,7 @@ public class PatientService {
         patient.setPhone(NewData.getPhone());
         patient.setDirection(NewData.getDirection());
         patient.setEmail(NewData.getEmail());
-        patient.setDisease(NewData.getDisease());
-
+        
         return patientRepository.save(patient);
     }
 }

@@ -36,27 +36,25 @@ public interface UserRepository extends CrudRepository<User, Long> {
         @Param("phonenumber") String phonenumber
     );
 
-    @Query(value = "Select distinct menus.menu_id, menus.name as menu, menus.icon, menus.path from users "
-        + "join user_roles on user_roles.user_id = users.user_id "
-        + "join roles on roles.role_id = user_roles.role_id "
-        + "join role_permissions on role_permissions.role_id = roles.role_id "
-        + "join permissions on permissions.permission_id = role_permissions.permission_id "
-        + "join submenus on submenus.submenu_id = permissions.submenu_id "
-        + "join menus on submenus.menu_id = menus.menu_id "
-        + "Where users.user_id = :user_id"
+    @Query(value = "Select distinct menus.menu_id, menus.name as menu, menus.icon, menus.path from user_roles "
+        + "join roles on roles.role_id = user_roles.role_id and roles.status = 'A'"
+        + "join role_permissions on role_permissions.role_id = roles.role_id and role_permissions.status = 'A' "
+        + "join permissions on permissions.permission_id = role_permissions.permission_id and permissions.status = 'A' "
+        + "join submenus on submenus.submenu_id = permissions.submenu_id and submenus.status = 'A' "
+        + "join menus on submenus.menu_id = menus.menu_id and menus.status = 'A' "
+        + "Where user_roles.status = 'A' and user_roles.user_id = :user_id and user_roles.role_id = :role_id"
         , nativeQuery = true
     )
-    List<Map<String, Object>> getAsignedMenus(@Param("user_id") Long user_id);
+    List<Map<String, Object>> getAsignedMenus(@Param("user_id") Long user_id, @Param("role_id") Long role_id);
 
-    @Query(value = "Select submenus.submenu_id, submenus.name, submenus.path, submenus.icon from users "
-        + "join user_roles on user_roles.user_id = users.user_id "
-        + "join roles on roles.role_id = user_roles.role_id "
-        + "join role_permissions on role_permissions.role_id = roles.role_id "
-        + "join permissions on permissions.permission_id = role_permissions.permission_id "
-        + "join submenus on submenus.submenu_id = permissions.submenu_id "
-        + "join menus on submenus.menu_id = menus.menu_id "
-        + "Where users.user_id = :user_id and submenus.menu_id = :menu_id"
+    @Query(value = "Select distinct submenus.submenu_id, submenus.name, submenus.path, submenus.icon from user_roles "
+        + "join roles on roles.role_id = user_roles.role_id and roles.status = 'A' "
+        + "join role_permissions on role_permissions.role_id = roles.role_id and role_permissions.status = 'A' "
+        + "join permissions on permissions.permission_id = role_permissions.permission_id and permissions.status = 'A' "
+        + "join submenus on submenus.submenu_id = permissions.submenu_id and submenus.status = 'A' "
+        + "join menus on submenus.menu_id = menus.menu_id and menus.status = 'A' "
+        + "Where user_roles.status = 'A' and user_roles.user_id = :user_id and user_roles.role_id = :role_id and submenus.menu_id = :menu_id"
         , nativeQuery = true
     )
-    List<Map<String, Object>> getPermissions(@Param("user_id") Long user_id, @Param("menu_id") Long menu_id);
+    List<Map<String, Object>> getPermissions(@Param("user_id") Long user_id, @Param("role_id") Long role_id, @Param("menu_id") Long menu_id);
 }
