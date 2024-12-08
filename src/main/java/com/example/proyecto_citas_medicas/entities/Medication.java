@@ -1,8 +1,7 @@
 package com.example.proyecto_citas_medicas.entities;
 
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
-import com.vladmihalcea.hibernate.type.json.JsonStringType;
+import com.example.proyecto_citas_medicas.utils.JsonConverter;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,8 +13,8 @@ public class Medication {
     private Long medicationId;
     private String name;
     private String type;
-    @Type(JsonStringType.class)
-    @Column(columnDefinition = "json")
+    @Convert(converter = JsonConverter.class)
+    @Column(columnDefinition = "text")
     private List<String> diseases;
     private Character status;
 

@@ -3,7 +3,6 @@ package com.example.proyecto_citas_medicas.repository;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

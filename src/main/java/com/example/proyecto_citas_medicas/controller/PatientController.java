@@ -1,33 +1,26 @@
 package com.example.proyecto_citas_medicas.controller;
 
 import com.example.proyecto_citas_medicas.entities.ApiResponse;
-import com.example.proyecto_citas_medicas.entities.Doctor;
 import com.example.proyecto_citas_medicas.entities.Patient;
-
-import java.util.Map;
 import java.util.Optional;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.example.proyecto_citas_medicas.service.DoctorService;
 import com.example.proyecto_citas_medicas.service.PatientService;
-
 
 @RestController
 @RequestMapping("/api/patients/")
 public class PatientController {
 
     private final PatientService patienteService;
-    private final DoctorService medicoService;
+    //private final DoctorService medicoService;
     private static final Logger logger = LoggerFactory.getLogger(PatientController.class);
 
-    public PatientController(PatientService patienteService, DoctorService medicoService) {
+    public PatientController(PatientService patienteService/*, DoctorService medicoService*/) {
         this.patienteService = patienteService;
-        this.medicoService = medicoService;
+        //this.medicoService = medicoService;
     }
 
     /*@GetMapping("patients_by_doctor")

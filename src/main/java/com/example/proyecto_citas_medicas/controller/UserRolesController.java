@@ -27,7 +27,7 @@ public class UserRolesController {
     public ResponseEntity<ApiResponse> getUserRoles(@RequestBody LoginUserDto loginUserDto) {
         try {
             User verifyUser = userService.verifyUser(loginUserDto.getEmail());
-
+            
             if(verifyUser == null){
                 return ResponseEntity.ok(new ApiResponse(false, "User Not Found", null, HttpStatus.NOT_FOUND.value()));
             }

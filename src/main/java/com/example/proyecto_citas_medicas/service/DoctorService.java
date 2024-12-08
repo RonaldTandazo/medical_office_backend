@@ -3,9 +3,7 @@ package com.example.proyecto_citas_medicas.service;
 import com.example.proyecto_citas_medicas.entities.Doctor;
 import org.springframework.stereotype.Service;
 import com.example.proyecto_citas_medicas.repository.DoctorRepository;
-
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class DoctorService {

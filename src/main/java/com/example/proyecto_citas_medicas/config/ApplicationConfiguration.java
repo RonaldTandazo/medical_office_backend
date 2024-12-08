@@ -9,9 +9,7 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 import com.example.proyecto_citas_medicas.repository.UserRepository;
-// import com.example.proyecto_citas_medicas.repository.UsersRepository;
 
 @Configuration
 public class ApplicationConfiguration {

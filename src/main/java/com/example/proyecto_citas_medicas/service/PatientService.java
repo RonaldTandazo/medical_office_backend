@@ -4,12 +4,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
 import com.example.proyecto_citas_medicas.entities.Patient;
 import com.example.proyecto_citas_medicas.repository.PatientRepository;
 import com.example.proyecto_citas_medicas.specifications.PatientSpecification;
-
-import java.util.Map;
 import java.util.Optional;
 
 @Service

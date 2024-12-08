@@ -4,19 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
 import com.example.proyecto_citas_medicas.entities.User;
 import com.example.proyecto_citas_medicas.repository.UserRepository;
 
 @Service
 public class UserService {
-
     private final UserRepository userRepository;
-    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     public UserService(UserRepository userRepository){
         this.userRepository = userRepository;

@@ -1,19 +1,12 @@
 package com.example.proyecto_citas_medicas.controller;
 
 import com.example.proyecto_citas_medicas.entities.ApiResponse;
-import com.example.proyecto_citas_medicas.entities.Doctor;
-import com.example.proyecto_citas_medicas.entities.Patient;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.example.proyecto_citas_medicas.service.SpecialityService;
-
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/specialities")
