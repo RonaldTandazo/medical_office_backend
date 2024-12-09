@@ -12,5 +12,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface DoctorRepository extends JpaRepository<Doctor, Long> {
     @Query(value = "Select * from doctors where speciality_id = :speciality_id", nativeQuery = true)
-    List<Doctor> getDoctorsBySpeciality(@Param("speciality_id") Long speciality_id); 
+    List<Doctor> getDoctorsBySpeciality(@Param("speciality_id") Long speciality_id);
+
+    @Query(value = "Select * from doctors where user_id = :user_id and doctors.status = 'A'", nativeQuery = true)
+    Doctor findDoctorByUserId(@Param("user_id") Long user_id); 
 }

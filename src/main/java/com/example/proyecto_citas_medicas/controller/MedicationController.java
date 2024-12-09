@@ -28,7 +28,6 @@ public class MedicationController {
         @RequestParam("page") int page, @RequestParam("size") int size
     ){
         try{
-            logger.info("size:" + size);
             Map<String, Object> medicationResponse = medicationServie.getMedicationsByName(medication, page, size);
 
             return ResponseEntity.ok(new ApiResponse(true, "Information Found", medicationResponse, HttpStatus.OK.value()));

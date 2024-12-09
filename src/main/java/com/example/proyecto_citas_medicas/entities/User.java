@@ -39,10 +39,10 @@ public class User implements UserDetails{
     }
 
     // Getters y Setters
-    public Long getId() {
+    public Long getUserId() {
         return userId;
     }
-    public void setId(Long userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 

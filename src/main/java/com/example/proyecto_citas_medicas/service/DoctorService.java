@@ -18,9 +18,9 @@ public class DoctorService {
         return doctorRepository.getDoctorsBySpeciality(speciality_id);
     }
 
-    // public Doctor findDoctorByUserId(Long user_id){
-    //     return doctorRepository.findMedicoByUserId(user_id);
-    // }
+    public Doctor findDoctorByUserId(Long user_id){
+        return doctorRepository.findDoctorByUserId(user_id);
+    }
 
     // public List<Doctor> findAll() {
     //     return doctorRepository.findAll();

@@ -1,5 +1,9 @@
 package com.example.proyecto_citas_medicas.entities;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -14,7 +18,18 @@ public class Doctor {
     private String phone;
     private Long userId;
     private Character status;
+    @OneToMany(mappedBy = "doctor")
+    @JsonIgnore
+    private List<DoctorPatient> doctorPatients;
 
+    public List<DoctorPatient> getDoctorPatients() {
+        return this.doctorPatients;
+    }
+
+    public void setDoctorPatients(List<DoctorPatient> doctorPatients) {
+        this.doctorPatients = doctorPatients;
+    }
+    
     public Long getDoctorId() {
         return this.doctorId;
     }

@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -20,32 +18,28 @@ import com.example.proyecto_citas_medicas.specifications.MedicationSpecification
 public class MedicationService {
     private final MedicationRepository medicationRepository;
     private final MedicationLaboratoryRepository medicationLaboratoryRepository;
-    private static final Logger logger = LoggerFactory.getLogger(MedicationService.class);
+    private final MedicationSpecification medicationSpecification;
 
-    public MedicationService(MedicationRepository medicationRepository, MedicationLaboratoryRepository medicationLaboratoryRepository) {
+    public MedicationService(MedicationRepository medicationRepository, MedicationLaboratoryRepository medicationLaboratoryRepository, MedicationSpecification medicationSpecification) {
         this.medicationRepository = medicationRepository;
         this.medicationLaboratoryRepository = medicationLaboratoryRepository;
+        this.medicationSpecification = medicationSpecification;
     }
 
     public Map<String, Object> getMedicationsByName(String medicationName, int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
     
-        // Paso 1: Filtrar medicamentos
-        Specification<Medication> spec = MedicationSpecification.medicationByNameAndStatus(medicationName);
+        Specification<Medication> spec = this.medicationSpecification.medicationByNameAndStatus(medicationName);
     
-        // Paso 2: Obtener los medicamentos con paginación
         Page<Medication> medicationsPage = medicationRepository.findAll(spec, pageable);
     
-        // Estructura para la respuesta
         List<Map<String, Object>> dataMedications = new ArrayList<>();
     
         for (Medication medication : medicationsPage) {
             Long medication_id = medication.getMedicationId();
     
-            // Obtener laboratorios asociados
             List<Object[]> laboratories = medicationLaboratoryRepository.getLaboratoriesFromMedication(medication_id);
     
-            // Si no hay laboratorios, descartar este medicamento
             if (laboratories == null || laboratories.isEmpty()) {
                 continue;
             }
@@ -53,20 +47,16 @@ public class MedicationService {
             List<Map<String, Object>> laboratoryDataList = new ArrayList<>();
             boolean hasValidLaboratoryDetails = false;
     
-            // Verificar cada laboratorio asociado
             for (Object[] laboratory : laboratories) {
                 Long laboratory_id = (Long) laboratory[0];
                 String laboratory_name = (String) laboratory[1];
     
-                // Obtener los detalles de la relación entre el medicamento y el laboratorio
                 List<Object[]> medicationDetail = medicationLaboratoryRepository.getInfoMedicationLaboratory(medication_id, laboratory_id);
     
-                // Si no hay detalles de la relación, saltar este laboratorio
                 if (medicationDetail == null || medicationDetail.isEmpty()) {
                     continue;
                 }
     
-                // Construir la información del laboratorio
                 Map<String, Object> laboratoryData = new HashMap<>();
                 laboratoryData.put("laboratory_id", laboratory_id);
                 laboratoryData.put("laboratory", laboratory_name);
@@ -84,16 +74,13 @@ public class MedicationService {
                 laboratoryData.put("content", medicationDetails);
                 laboratoryDataList.add(laboratoryData);
     
-                // Marcar que al menos un laboratorio tiene detalles válidos
                 hasValidLaboratoryDetails = true;
             }
     
-            // Si no hay laboratorios válidos con detalles, descartar este medicamento
             if (!hasValidLaboratoryDetails) {
                 continue;
             }
     
-            // Construir la información del medicamento
             Map<String, Object> medicationData = new HashMap<>();
             medicationData.put("medication_id", medication.getMedicationId());
             medicationData.put("medication", medication.getName());
@@ -101,11 +88,9 @@ public class MedicationService {
             medicationData.put("diseases", medication.getDiseases());
             medicationData.put("laboratories", laboratoryDataList);
     
-            // Almacenar el medicamento con toda su información en la lista
             dataMedications.add(medicationData);
         }
     
-        // Estructura de respuesta final
         Map<String, Object> response = new HashMap<>();
         response.put("medications", dataMedications);
         response.put("pagination", Map.of(
@@ -114,9 +99,7 @@ public class MedicationService {
             "currentPage", medicationsPage.getNumber(),
             "pageSize", medicationsPage.getSize()
         ));
-    
-        logger.info("Response data: {}", response);
-    
+        
         return response;
     }        
 }

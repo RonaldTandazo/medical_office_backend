@@ -3,6 +3,7 @@ package com.example.proyecto_citas_medicas.controller;
 import com.example.proyecto_citas_medicas.entities.ApiResponse;
 import com.example.proyecto_citas_medicas.entities.Patient;
 import java.util.Optional;
+import org.springframework.data.domain.Page;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -23,18 +24,18 @@ public class PatientController {
         //this.medicoService = medicoService;
     }
 
-    /*@GetMapping("patients_by_doctor")
+    @GetMapping("patients_by_doctor")
     public ResponseEntity<ApiResponse> getPacientesByDoctor(
         @RequestParam(value = "identification", required = false) String identification,
         @RequestParam(value = "patient", required = false) String patient,
         @RequestParam(value = "gender", required = false) Character gender,
-        @RequestParam(value = "doctor_id", required = true) Long doctorId,
+        @RequestParam(value = "doctorId", required = true) Long doctorId,
         @RequestParam("page") int page, @RequestParam("size") int size
     ){
         try{
-            Page</*Map<String, Object>*//*Patient> patientsResponse = patienteService.getPacientesByDoctor(doctorId, identification, patient, gender, page, size);
+            Page</*Map<String, Object>*/Patient> patientsResponse = patienteService.getPacientesByDoctor(doctorId, identification, patient, gender, page, size);
 
-            /*return ResponseEntity.ok(new ApiResponse(true, "Information Found", patientsResponse, HttpStatus.OK.value()));
+            return ResponseEntity.ok(new ApiResponse(true, "Information Found", patientsResponse, HttpStatus.OK.value()));
         }catch(Exception e){
             String className = this.getClass().getName();
             String methodName = new Throwable().getStackTrace()[0].getMethodName();
@@ -42,7 +43,7 @@ public class PatientController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(new ApiResponse(false, "Invalid Credentials", null, HttpStatus.INTERNAL_SERVER_ERROR.value()));
         }
-    }*/
+    }
 
     @PostMapping("store")
     public ResponseEntity<ApiResponse> store(@RequestBody Patient patient) {

@@ -32,7 +32,7 @@ public class UserRolesController {
                 return ResponseEntity.ok(new ApiResponse(false, "User Not Found", null, HttpStatus.NOT_FOUND.value()));
             }
 
-            List<Map<String, Object>> userRoles = userService.getUserRoles(verifyUser.getId());
+            List<Map<String, Object>> userRoles = userService.getUserRoles(verifyUser.getUserId());
             if (userRoles.isEmpty()) {
                 return ResponseEntity.ok(new ApiResponse(false, "No roles found", null, HttpStatus.NOT_FOUND.value()));
             }

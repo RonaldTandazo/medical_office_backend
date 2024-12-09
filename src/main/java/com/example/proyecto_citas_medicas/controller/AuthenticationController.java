@@ -5,14 +5,15 @@ import com.example.proyecto_citas_medicas.dtos.LoginUserDto;
 import com.example.proyecto_citas_medicas.dtos.RecoverPasswordDto;
 import com.example.proyecto_citas_medicas.dtos.RegisterUserDto;
 import com.example.proyecto_citas_medicas.entities.ApiResponse;
+import com.example.proyecto_citas_medicas.entities.Doctor;
 import com.example.proyecto_citas_medicas.entities.User;
 import com.example.proyecto_citas_medicas.entities.UserTokens;
 import com.example.proyecto_citas_medicas.service.AuthenticationService;
+import com.example.proyecto_citas_medicas.service.DoctorService;
 import com.example.proyecto_citas_medicas.service.EmailService;
 import com.example.proyecto_citas_medicas.service.UserService;
 import com.example.proyecto_citas_medicas.service.UserTokensService;
 import com.example.proyecto_citas_medicas.utils.JwtUtil;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +33,7 @@ public class AuthenticationController {
     private final AuthenticationService authenticationService;
     private final UserService userService;
     private final UserTokensService userTokensService;
+    private final DoctorService doctorService;
     private BCryptPasswordEncoder bcryptEncoder;
     private static final Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
 
@@ -41,7 +43,8 @@ public class AuthenticationController {
         AuthenticationService authenticationService,
         UserService userService,
         UserTokensService userTokensService,
-        BCryptPasswordEncoder bcryptEncoder
+        BCryptPasswordEncoder bcryptEncoder,
+        DoctorService doctorService
     ) {
         this.jwtUtil = jwtUtil;
         this.emailService = emailService;
@@ -49,6 +52,7 @@ public class AuthenticationController {
         this.userService = userService;
         this.userTokensService = userTokensService;
         this.bcryptEncoder = bcryptEncoder;
+        this.doctorService = doctorService;
     }
 
     @PostMapping("signup")
@@ -69,17 +73,25 @@ public class AuthenticationController {
     @PostMapping("login")
     public ResponseEntity<ApiResponse> authenticate(@RequestBody LoginUserDto loginUserDto) {
         try{
+            Long role_id = loginUserDto.getRoleId();
             User authenticatedUser = authenticationService.authenticate(loginUserDto);
-            List<Map<String, Object>> permissions = userService.getPermissions(authenticatedUser.getId(), loginUserDto.getRoleId());
+            List<Map<String, Object>> permissions = userService.getPermissions(authenticatedUser.getUserId(), role_id);
 
             Map<String, Object> userData = new HashMap<>();
-            userData.put("user_id", authenticatedUser.getId());
+            userData.put("user_id", authenticatedUser.getUserId());
             userData.put("email", authenticatedUser.getEmail());
             userData.put("username", authenticatedUser.getUsername());
             userData.put("identification", authenticatedUser.getIdentification());
             userData.put("gender", authenticatedUser.getGender());
             userData.put("age", authenticatedUser.getAge());
             userData.put("phonenumber", authenticatedUser.getPhonenumber());
+            
+            if(role_id == 2){
+                Doctor doctor = doctorService.findDoctorByUserId(authenticatedUser.getUserId());
+                if(doctor != null){
+                    userData.put("doctor_id", doctor.getDoctorId());
+                }
+            }
             
             Map<String, Object> extraClaims = new HashMap<>();
             extraClaims.put("user_data", userData);
@@ -131,11 +143,11 @@ public class AuthenticationController {
             String token = UUID.randomUUID().toString();
             emailService.sendPasswordResetEmail(recover.getEmail(), token);
 
-            UserTokens find_item = userTokensService.findItemByUserId(verifyUser.getId());
+            UserTokens find_item = userTokensService.findItemByUserId(verifyUser.getUserId());
             UserTokens info = null;
 
             if(find_item == null){
-                info = userTokensService.insertItem(verifyUser.getId(), token);
+                info = userTokensService.insertItem(verifyUser.getUserId(), token);
             }else{
                 info = userTokensService.updateItem(find_item.getUserTokenId(), token);
             }

@@ -3,6 +3,9 @@ package com.example.proyecto_citas_medicas.repository;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -10,13 +13,13 @@ import org.springframework.stereotype.Repository;
 import com.example.proyecto_citas_medicas.entities.User;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Long> {
+public interface UserRepository extends CrudRepository<User, Long>, JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
     Optional<User> findByEmail(String email);
 
-    @Query(value = "SELECT roles.role_id, roles.name FROM user_roles " +
-            "JOIN roles on roles.role_id = user_roles.role_id and roles.status = 'A'" +
-            "WHERE user_roles.user_id = :user_id and user_roles.status = 'A'", nativeQuery = true)
-    List<Map<String, Object>> findRolesByUserId(@Param("user_id") Long user_id);
+    @Query(value = "SELECT roles.role_id, roles.name, user_roles.status FROM user_roles " +
+            "JOIN roles on roles.role_id = user_roles.role_id and roles.status in (:status)" +
+            "WHERE user_roles.user_id = :user_id and user_roles.status in (:status)", nativeQuery = true)
+    List<Map<String, Object>> findRolesByUserId(@Param("user_id") Long user_id, Character[] status);
 
     @Query(value = "Update users set password = :new_password where user_id = :user_id and status = 'A' Returning user_id, username, email, password, status", nativeQuery = true)
     User updatePassword(@Param("user_id") Long user_id, @Param("new_password") String new_password);
@@ -26,7 +29,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
         + "WHERE user_id = :userId AND status = 'A' "
         + "RETURNING user_id, username, email, identification, gender, age, phonenumber, avatar, password, status",
         nativeQuery = true)
-    User updateItem(
+    User updateUserInformation(
         @Param("userId") Long userId,
         @Param("username") String username,
         @Param("identification") String identification,

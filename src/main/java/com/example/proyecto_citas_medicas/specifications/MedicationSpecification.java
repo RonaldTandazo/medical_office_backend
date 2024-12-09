@@ -2,13 +2,12 @@ package com.example.proyecto_citas_medicas.specifications;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Component;
 import com.example.proyecto_citas_medicas.entities.Medication;
 import jakarta.persistence.criteria.*;
 
+@Component
 public class MedicationSpecification {
     public static Specification<Medication> medicationByNameAndStatus(String name) {
         return (Root<Medication> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) -> {
