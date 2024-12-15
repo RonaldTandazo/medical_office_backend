@@ -20,7 +20,7 @@ public class User implements UserDetails{
     private String phonenumber;
     private String avatar;
     private String password;
-    private String status;
+    private Character status;
 
     @Override
     public String toString() {
@@ -102,10 +102,10 @@ public class User implements UserDetails{
         this.password = password;
     }
 
-    public String getStatus() {
+    public Character getStatus() {
         return status;
     }
-    public void setStatus(String status) {
+    public void setStatus(Character status) {
         this.status = status;
     }
 

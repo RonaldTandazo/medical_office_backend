@@ -1,13 +1,13 @@
 package com.example.proyecto_citas_medicas.controller;
 
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import com.example.proyecto_citas_medicas.entities.ApiResponse;
 import com.example.proyecto_citas_medicas.entities.User;
 import com.example.proyecto_citas_medicas.service.UserService;
@@ -23,7 +23,7 @@ public class UserController {
         this.userService = userService;
     }
 
-     @GetMapping("get_all_users")
+    @GetMapping("get_all_users")
     public ResponseEntity<ApiResponse> get_all_users(
         @RequestParam(value = "identification", required = false) String identification,
         @RequestParam("page") int page, @RequestParam("size") int size
@@ -38,6 +38,32 @@ public class UserController {
             logger.error("ERROR:"+className + ":" + methodName+" -> "+e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(new ApiResponse(false, "Invalid Credentials", null, HttpStatus.INTERNAL_SERVER_ERROR.value()));
+        }
+    }
+
+    @PutMapping("user_activation_control/{user_id}")
+    public ResponseEntity<ApiResponse> userActivationControl(
+        @PathVariable("user_id") Long user_id,
+        @RequestParam("state") String state
+    ){
+        try {
+            boolean activationControl = userService.userActivationControl(user_id, state);
+
+            return ResponseEntity.ok(
+                    new ApiResponse(true, "User Status Updated", activationControl, HttpStatus.OK.value())
+            );
+        } catch (NoSuchElementException e) {
+            String className = this.getClass().getName();
+            String methodName = new Throwable().getStackTrace()[0].getMethodName();
+            logger.error("ERROR: "+className + ":" + methodName+" -> "+e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(new ApiResponse(false, "User not found", null, HttpStatus.NOT_FOUND.value()));
+        } catch(Exception e){
+            String className = this.getClass().getName();
+            String methodName = new Throwable().getStackTrace()[0].getMethodName();
+            logger.error("ERROR:"+className + ":" + methodName+" -> "+e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(new ApiResponse(false, "Error Updating User Status", null, HttpStatus.INTERNAL_SERVER_ERROR.value()));
         }
     }
 

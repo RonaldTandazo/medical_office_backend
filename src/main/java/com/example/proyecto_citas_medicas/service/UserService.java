@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -12,16 +16,19 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import com.example.proyecto_citas_medicas.entities.User;
 import com.example.proyecto_citas_medicas.repository.UserRepository;
+import com.example.proyecto_citas_medicas.repository.UserRolesRepository;
 import com.example.proyecto_citas_medicas.specifications.UserSpecification;
 
 @Service
 public class UserService {
     protected final UserRepository userRepository;
+    protected final UserRolesRepository userRolesRepository;
     protected final UserSpecification userSpecification;
 
-    public UserService(UserRepository userRepository, UserSpecification userSpecification){
+    public UserService(UserRepository userRepository, UserSpecification userSpecification, UserRolesRepository userRolesRepository){
         this.userRepository = userRepository;
         this.userSpecification = userSpecification;
+        this.userRolesRepository = userRolesRepository;
     }
 
     public Map<String, Object> getAllUsers(String identification, int page, int size) {
@@ -36,7 +43,7 @@ public class UserService {
         for (User user : usersPage) {
             Long user_id = user.getUserId();
             Character[] status = {'A', 'I', 'D'};
-            List<Map<String, Object>> roles = userRepository.findRolesByUserId(user_id, status);
+            List<Map<String, Object>> roles = userRolesRepository.findRolesByUserId(user_id, status);
     
             Map<String, Object> userData = new HashMap<>();
             userData.put("user_id", user.getUserId());
@@ -52,7 +59,6 @@ public class UserService {
             dataUsers.add(userData);
         }
     
-        // Estructura de respuesta final
         Map<String, Object> response = new HashMap<>();
         response.put("users", dataUsers);
         response.put("pagination", Map.of(
@@ -65,13 +71,19 @@ public class UserService {
         return response;
     } 
 
-    public User verifyUser(String email){
-        return userRepository.findByEmail(email).orElse(null);
-    }
-
-    public List<Map<String, Object>> getUserRoles(Long user_id){
-        Character[] status = {'A'};
-        return userRepository.findRolesByUserId(user_id, status);
+    public User verifyUser(String email) {
+        Optional<User> user = userRepository.findByEmail(email);
+        
+        if (user.isEmpty()) {
+            throw new NoSuchElementException("User not found");
+        }
+    
+        User existingUser = user.get();
+        if (existingUser.getStatus() != 'A') {
+            throw new IllegalStateException("User is not active");
+        }
+    
+        return existingUser;
     }
 
     public User updatePassword(Long user_id, String new_password){
@@ -106,5 +118,25 @@ public class UserService {
         }
 
         return mutableMenus;
+    }
+
+    public boolean userActivationControl(Long user_id, String state) {
+        if (!"Activate".equalsIgnoreCase(state) && !"Inactivate".equalsIgnoreCase(state)) {
+            throw new IllegalArgumentException("Invalid state: " + state);
+        }
+
+        Character status = "Activate".equalsIgnoreCase(state) ? 'A' : 'I';
+
+        Optional<User> existingUser = userRepository.findById(user_id);
+
+        if (existingUser.isEmpty()) {
+            throw new NoSuchElementException("User not found");
+        }
+
+        User user = existingUser.get();
+        user.setStatus(status);
+        userRepository.save(user);
+
+        return true;
     }
 }
