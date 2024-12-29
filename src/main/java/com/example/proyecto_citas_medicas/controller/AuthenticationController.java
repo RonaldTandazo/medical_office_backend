@@ -74,6 +74,7 @@ public class AuthenticationController {
     public ResponseEntity<ApiResponse> authenticate(@RequestBody LoginUserDto loginUserDto) {
         try{
             Long role_id = loginUserDto.getRoleId();
+            String role = loginUserDto.getRole();
             User authenticatedUser = authenticationService.authenticate(loginUserDto);
             List<Map<String, Object>> permissions = userService.getPermissions(authenticatedUser.getUserId(), role_id);
 
@@ -85,6 +86,8 @@ public class AuthenticationController {
             userData.put("gender", authenticatedUser.getGender());
             userData.put("age", authenticatedUser.getAge());
             userData.put("phonenumber", authenticatedUser.getPhonenumber());
+            userData.put("role_id", role_id);
+            userData.put("role", role);
             
             if(role_id == 2){
                 Doctor doctor = doctorService.findDoctorByUserId(authenticatedUser.getUserId());

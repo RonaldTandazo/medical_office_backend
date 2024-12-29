@@ -1,6 +1,7 @@
 package com.example.proyecto_citas_medicas.controller;
 
 import com.example.proyecto_citas_medicas.entities.ApiResponse;
+import com.example.proyecto_citas_medicas.entities.DoctorPatient;
 import com.example.proyecto_citas_medicas.entities.Patient;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
@@ -46,9 +47,20 @@ public class PatientController {
     }
 
     @PostMapping("store")
-    public ResponseEntity<ApiResponse> store(@RequestBody Patient patient) {
+    public ResponseEntity<ApiResponse> store(@RequestBody Patient patient, @RequestParam Long doctor_id) {
         try {
-            patienteService.store(patient);
+            Patient new_patient = patienteService.store(patient);
+            Long patient_id = new_patient.getPatientId();
+
+            if(patient_id != null){
+                DoctorPatient store_relation = patienteService.store_doctor_patient_relation(doctor_id, patient_id);
+
+                if(store_relation == null){
+                    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        .body(new ApiResponse(false, "Error Saving Patient", null, HttpStatus.INTERNAL_SERVER_ERROR.value()));
+                }
+            }
+
             return ResponseEntity.ok(new ApiResponse(true, "Patient Save", null, HttpStatus.OK.value()));
         } catch (Exception e) {
             String className = this.getClass().getName();

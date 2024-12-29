@@ -5,7 +5,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+
+import com.example.proyecto_citas_medicas.entities.DoctorPatient;
 import com.example.proyecto_citas_medicas.entities.Patient;
+import com.example.proyecto_citas_medicas.repository.DoctorPatientRepository;
 import com.example.proyecto_citas_medicas.repository.PatientRepository;
 import com.example.proyecto_citas_medicas.specifications.PatientSpecification;
 import java.util.Optional;
@@ -14,11 +17,13 @@ import java.util.Optional;
 public class PatientService {
 
     private final PatientRepository patientRepository;
+    private final DoctorPatientRepository doctorPatientRepository;
     private final PatientSpecification patientSpecification;
 
-    public PatientService(PatientRepository patientRepository, PatientSpecification patientSpecification) {
+    public PatientService(PatientRepository patientRepository, PatientSpecification patientSpecification, DoctorPatientRepository docPatientRepository) {
         this.patientRepository = patientRepository;
         this.patientSpecification = patientSpecification;
+        this.doctorPatientRepository = docPatientRepository;
     }
 
     public Page</*Map<String, Object>*/Patient> getPacientesByDoctor(Long doctorId, String identification, String patientName, Character gender, int page, int size) {
@@ -49,5 +54,9 @@ public class PatientService {
         patient.setEmail(NewData.getEmail());
         
         return patientRepository.save(patient);
+    }
+
+    public DoctorPatient store_doctor_patient_relation(Long doctor_id, Long patient_id){
+        return doctorPatientRepository.store(doctor_id, patient_id);
     }
 }

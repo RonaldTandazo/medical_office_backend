@@ -2,8 +2,9 @@ package com.example.proyecto_citas_medicas.dtos;
 
 public class LoginUserDto {
     private String email;
-    private Long roleId;
     private String password;
+    private Long roleId;
+    private String role;
     
     public String getEmail() {
         return email;
@@ -24,5 +25,12 @@ public class LoginUserDto {
     }
     public void setRoleId(Long roleId){
         this.roleId = roleId;
+    }
+
+    public String getRole(){
+        return role;
+    }
+    public void setRole(String role){
+        this.role = role;
     }
 }

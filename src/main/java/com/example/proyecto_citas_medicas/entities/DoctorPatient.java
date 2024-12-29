@@ -10,6 +10,7 @@ public class DoctorPatient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long doctorPatientId;
     private Character status;
+    
     @ManyToOne
     @JsonBackReference
     @JoinColumn(name = "doctor_id")
