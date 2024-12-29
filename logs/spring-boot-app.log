@@ -614,3 +614,86 @@
 2024-12-29 02:06:34 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-12-29 02:06:34 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2024-12-29 02:06:34 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-29 14:59:01 INFO  c.e.p.ProyectoCitasMedicasApplication - Starting ProyectoCitasMedicasApplication using Java 22.0.2 with PID 21924 (C:\Users\Eduardo\proyectos\medical_office\medical_office_backend\build\classes\java\main started by RØNALD in C:\Users\Eduardo\proyectos\medical_office\medical_office_backend)
+2024-12-29 14:59:01 INFO  c.e.p.ProyectoCitasMedicasApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-29 14:59:01 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-29 14:59:01 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.AppointmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.DoctorPatientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.DoctorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.MedicationLaboratoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.MedicationRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.PatientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.PermissionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.RoleRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.SpecialityRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UserRolesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UserTokensRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 JDBC repository interfaces.
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 12 JPA repository interfaces.
+2024-12-29 14:59:02 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-12-29 14:59:02 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-12-29 14:59:02 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2024-12-29 14:59:02 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2024-12-29 14:59:02 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-29 14:59:02 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-12-29 14:59:02 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-29 14:59:02 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1213 ms
+2024-12-29 14:59:02 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-29 14:59:04 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@550aeb5f
+2024-12-29 14:59:04 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-29 14:59:04 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-29 14:59:04 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-12-29 14:59:04 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-29 14:59:04 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-29 14:59:05 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-29 14:59:05 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 14:59:05 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-29 14:59:06 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-29 14:59:06 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-29 14:59:06 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-12-29 14:59:06 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-29 14:59:06 WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-12-29 14:59:06 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 20 mappings in 'requestMappingHandlerMapping'
+2024-12-29 14:59:06 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-12-29 14:59:06 DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-12-29 14:59:06 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-29 14:59:06 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-12-29 14:59:06 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2024-12-29 14:59:06 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2024-12-29 14:59:06 INFO  c.e.p.ProyectoCitasMedicasApplication - Started ProyectoCitasMedicasApplication in 6.119 seconds (process running for 6.467)
+2024-12-29 15:31:07 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-29 15:31:07 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-29 15:31:07 DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2024-12-29 15:31:07 DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2024-12-29 15:31:07 DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2024-12-29 15:31:07 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@208eefba
+2024-12-29 15:31:07 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@2c9f296a
+2024-12-29 15:31:07 DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-12-29 15:31:07 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-12-29 15:31:07 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/user_roles
+2024-12-29 15:31:07 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/user_roles
+2024-12-29 15:31:07 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-29 15:31:07 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/user_roles
+2024-12-29 15:31:07 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/user_roles", parameters={}
+2024-12-29 15:31:07 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.UserRolesController#getUserRoles(LoginUserDto)
+2024-12-29 15:31:07 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.proyecto_citas_medicas.dtos.LoginUserDto@5fc65e15]
+2024-12-29 15:31:08 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-12-29 15:31:08 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@5b03bf42]
+2024-12-29 15:31:08 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-12-29 15:31:19 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
+2024-12-29 15:31:19 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2024-12-29 15:31:19 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-29 15:31:19 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2024-12-29 15:31:19 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/login", parameters={}
+2024-12-29 15:31:19 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#authenticate(LoginUserDto)
+2024-12-29 15:31:19 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.proyecto_citas_medicas.dtos.LoginUserDto@38d1a6ce]
+2024-12-29 15:31:20 DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2024-12-29 15:31:21 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2024-12-29 15:31:21 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@16261167]
+2024-12-29 15:31:21 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
