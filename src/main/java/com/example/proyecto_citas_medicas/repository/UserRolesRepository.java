@@ -14,5 +14,5 @@ public interface UserRolesRepository extends JpaRepository<UserRoles, Long> {
     @Query(value = "SELECT user_roles.user_role_id, roles.role_id, roles.name, user_roles.status FROM user_roles " +
         "JOIN roles on roles.role_id = user_roles.role_id and roles.status in (:status)" +
         "WHERE user_roles.user_id = :user_id and user_roles.status in (:status)", nativeQuery = true)
-    List<Map<String, Object>> findRolesByUserId(@Param("user_id") Long user_id, Character[] status);
+    List<Map<String, Object>> findRolesByUserId(@Param("user_id") Long user_id, @Param("status") Character[] status);
 }

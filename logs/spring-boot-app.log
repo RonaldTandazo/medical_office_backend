@@ -1,699 +1,333 @@
-2024-12-29 01:54:58 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-12-29 01:54:58 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2024-12-29 01:54:58 DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
-2024-12-29 01:54:58 DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
-2024-12-29 01:54:58 DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
-2024-12-29 01:54:58 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@208eefba
-2024-12-29 01:54:58 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@1b8f915d
-2024-12-29 01:54:58 DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2024-12-29 01:54:58 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2024-12-29 01:54:58 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/unlink_patient/6/1
-2024-12-29 01:54:58 DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/doctors/unlink_patient/6/1
-2024-12-29 01:54:58 DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/doctors/unlink_patient/6/1
-2024-12-29 01:54:58 DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/doctors/unlink_patient/6/1", parameters={}
-2024-12-29 01:54:58 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#unlikPatient(Long, Long)
-2024-12-29 01:54:58 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:54:58 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@2cba72b0]
-2024-12-29 01:54:58 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:55:07 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:55:07 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:55:07 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:55:07 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:55:07 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:55:08 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:55:08 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@3b968a9f]
-2024-12-29 01:55:08 WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$PlainPageSerializationWarning - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
-	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
-	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
-
-2024-12-29 01:55:08 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:55:29 INFO  c.e.p.ProyectoCitasMedicasApplication - Starting ProyectoCitasMedicasApplication using Java 22.0.2 with PID 6052 (C:\Users\Eduardo\proyectos\medical_office\medical_office_backend\build\classes\java\main started by RØNALD in C:\Users\Eduardo\proyectos\medical_office\medical_office_backend)
-2024-12-29 01:55:29 INFO  c.e.p.ProyectoCitasMedicasApplication - No active profile set, falling back to 1 default profile: "default"
-2024-12-29 01:55:29 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-12-29 01:55:29 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.AppointmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.DoctorPatientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.DoctorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.MedicationLaboratoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.MedicationRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.PatientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.PermissionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.RoleRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.SpecialityRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UserRolesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UserTokensRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 0 JDBC repository interfaces.
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-12-29 01:55:29 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 12 JPA repository interfaces.
-2024-12-29 01:55:29 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-12-29 01:55:29 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-12-29 01:55:30 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2024-12-29 01:55:30 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
-2024-12-29 01:55:30 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2024-12-29 01:55:30 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-12-29 01:55:30 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2024-12-29 01:55:30 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 971 ms
-2024-12-29 01:55:30 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2024-12-29 01:55:32 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5d12e818
-2024-12-29 01:55:32 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2024-12-29 01:55:32 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-12-29 01:55:32 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-12-29 01:55:32 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2024-12-29 01:55:32 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-12-29 01:55:33 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-12-29 01:55:33 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-12-29 01:55:33 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-12-29 01:55:33 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-12-29 01:55:34 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-12-29 01:55:34 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 0 ResponseBodyAdvice
-2024-12-29 01:55:34 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-12-29 01:55:34 WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-12-29 01:55:34 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 20 mappings in 'requestMappingHandlerMapping'
-2024-12-29 01:55:34 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-12-29 01:55:34 DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
-2024-12-29 01:55:34 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-12-29 01:55:34 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2024-12-29 01:55:34 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
-2024-12-29 01:55:34 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
-2024-12-29 01:55:34 INFO  c.e.p.ProyectoCitasMedicasApplication - Started ProyectoCitasMedicasApplication in 5.705 seconds (process running for 6.073)
-2024-12-29 01:55:38 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-12-29 01:55:38 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2024-12-29 01:55:38 DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
-2024-12-29 01:55:38 DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
-2024-12-29 01:55:38 DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
-2024-12-29 01:55:38 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@52dae0e1
-2024-12-29 01:55:38 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@7cc44da3
-2024-12-29 01:55:38 DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2024-12-29 01:55:38 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2024-12-29 01:55:38 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/unlink_patient/6/1
-2024-12-29 01:55:38 DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/doctors/unlink_patient/6/1
-2024-12-29 01:55:38 DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/doctors/unlink_patient/6/1
-2024-12-29 01:55:38 DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/doctors/unlink_patient/6/1", parameters={}
-2024-12-29 01:55:38 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#unlikPatient(Long, Long)
-2024-12-29 01:55:38 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:55:38 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@dfb17a6]
-2024-12-29 01:55:38 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:57:14 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:57:14 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:57:15 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:57:15 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:57:15 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:57:15 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:57:15 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@be665c8]
-2024-12-29 01:57:15 WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$PlainPageSerializationWarning - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
-	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
-	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
-
-2024-12-29 01:57:15 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:57:46 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:57:46 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:57:46 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:57:46 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:57:46 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:57:46 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:57:46 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@7992e75e]
-2024-12-29 01:57:46 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:57:57 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:57:57 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:57:58 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:57:58 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:57:58 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:57:58 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:57:58 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@27260045]
-2024-12-29 01:57:58 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:58:03 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/unlink_patient/6/1
-2024-12-29 01:58:03 DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/doctors/unlink_patient/6/1
-2024-12-29 01:58:03 DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/doctors/unlink_patient/6/1
-2024-12-29 01:58:03 DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/doctors/unlink_patient/6/1", parameters={}
-2024-12-29 01:58:03 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#unlikPatient(Long, Long)
-2024-12-29 01:58:04 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:58:04 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@672b632f]
-2024-12-29 01:58:04 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:58:04 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:04 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:04 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:04 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:58:04 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:58:04 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:58:04 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@73a2a20f]
-2024-12-29 01:58:04 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:58:08 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:08 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:08 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:58:08 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:58:09 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:58:09 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@61b8c597]
-2024-12-29 01:58:09 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:58:14 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:14 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:14 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:14 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:58:14 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:58:15 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:58:15 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@35e919d3]
-2024-12-29 01:58:15 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:58:43 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:43 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:43 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:43 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:58:43 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:58:43 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:58:43 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@1952286c]
-2024-12-29 01:58:43 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:58:46 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:46 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:46 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:58:46 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:58:47 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:58:47 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@43fa5929]
-2024-12-29 01:58:47 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:58:52 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:52 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:52 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:58:52 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:58:52 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:58:52 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:58:52 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@1fa343d5]
-2024-12-29 01:58:52 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:59:03 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:03 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:03 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:03 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:59:03 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:59:04 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:59:04 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@64a0b347]
-2024-12-29 01:59:04 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:59:13 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/unlink_patient/6/1
-2024-12-29 01:59:13 DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/doctors/unlink_patient/6/1
-2024-12-29 01:59:13 DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/doctors/unlink_patient/6/1
-2024-12-29 01:59:13 DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/doctors/unlink_patient/6/1", parameters={}
-2024-12-29 01:59:13 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#unlikPatient(Long, Long)
-2024-12-29 01:59:14 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:59:14 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@4fadc333]
-2024-12-29 01:59:14 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:59:14 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:14 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:14 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:14 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:59:14 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:59:14 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:59:14 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@1487a4b5]
-2024-12-29 01:59:14 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:59:29 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:29 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:30 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:30 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:59:30 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:59:30 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:59:30 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@7c22421b]
-2024-12-29 01:59:30 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:59:50 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:50 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:50 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:50 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:59:50 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:59:50 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:59:50 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@4925e44c]
-2024-12-29 01:59:50 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:59:56 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:56 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:56 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:56 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:59:56 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:59:56 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:59:56 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@35957ca3]
-2024-12-29 01:59:56 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 01:59:59 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:59 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 01:59:59 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 01:59:59 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 01:59:59 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 01:59:59 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@3930fcbe]
-2024-12-29 01:59:59 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:00:05 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:05 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:05 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:05 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:00:05 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:00:06 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:00:06 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@2a6b37b6]
-2024-12-29 02:00:06 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:00:12 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:12 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:12 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:12 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:00:12 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:00:13 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:00:13 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@2d222a44]
-2024-12-29 02:00:13 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:00:18 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/unlink_patient/6/1
-2024-12-29 02:00:18 DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/doctors/unlink_patient/6/1
-2024-12-29 02:00:19 DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/doctors/unlink_patient/6/1
-2024-12-29 02:00:19 DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/doctors/unlink_patient/6/1", parameters={}
-2024-12-29 02:00:19 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#unlikPatient(Long, Long)
-2024-12-29 02:00:19 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:00:19 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@2f4fa558]
-2024-12-29 02:00:19 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:00:19 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:19 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:19 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:19 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:00:19 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:00:19 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:00:19 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@21cc1d77]
-2024-12-29 02:00:19 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:00:42 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:42 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:42 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:43 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:00:43 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:00:43 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:00:43 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@5a26cef6]
-2024-12-29 02:00:43 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:00:48 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:48 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:48 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:48 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:00:48 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:00:49 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:00:49 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@11780142]
-2024-12-29 02:00:49 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:00:53 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:53 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:54 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:00:54 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:00:54 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:00:54 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:00:54 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@8e7de96]
-2024-12-29 02:00:54 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:01:04 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:04 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:04 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:04 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:01:04 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:01:04 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:01:04 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@577b2e6d]
-2024-12-29 02:01:04 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:01:08 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/user_roles
-2024-12-29 02:01:08 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/user_roles
-2024-12-29 02:01:08 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2024-12-29 02:01:08 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/user_roles
-2024-12-29 02:01:08 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/user_roles", parameters={}
-2024-12-29 02:01:08 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.UserRolesController#getUserRoles(LoginUserDto)
-2024-12-29 02:01:08 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.proyecto_citas_medicas.dtos.LoginUserDto@61c76f14]
-2024-12-29 02:01:08 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:01:08 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@e6519aa]
-2024-12-29 02:01:08 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:01:16 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/user_roles
-2024-12-29 02:01:16 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/user_roles
-2024-12-29 02:01:16 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2024-12-29 02:01:16 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/user_roles
-2024-12-29 02:01:16 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/user_roles", parameters={}
-2024-12-29 02:01:16 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.UserRolesController#getUserRoles(LoginUserDto)
-2024-12-29 02:01:16 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.proyecto_citas_medicas.dtos.LoginUserDto@3a8ff3f3]
-2024-12-29 02:01:16 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:01:16 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@3aab403d]
-2024-12-29 02:01:16 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:01:18 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
-2024-12-29 02:01:18 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
-2024-12-29 02:01:18 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2024-12-29 02:01:18 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
-2024-12-29 02:01:18 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/login", parameters={}
-2024-12-29 02:01:18 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#authenticate(LoginUserDto)
-2024-12-29 02:01:18 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.proyecto_citas_medicas.dtos.LoginUserDto@2a933237]
-2024-12-29 02:01:19 DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
-2024-12-29 02:01:20 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:01:20 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@483f1ef5]
-2024-12-29 02:01:20 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:01:22 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:22 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:22 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:22 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:01:22 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:01:23 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:01:23 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@df566ad]
-2024-12-29 02:01:23 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:01:31 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/unlink_patient/6/1
-2024-12-29 02:01:31 DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/doctors/unlink_patient/6/1
-2024-12-29 02:01:32 DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/doctors/unlink_patient/6/1
-2024-12-29 02:01:32 DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/doctors/unlink_patient/6/1", parameters={}
-2024-12-29 02:01:32 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#unlikPatient(Long, Long)
-2024-12-29 02:01:32 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:01:32 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@670eb51b]
-2024-12-29 02:01:32 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:01:32 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:32 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:32 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:32 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:01:32 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:01:32 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:01:32 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@a26a364]
-2024-12-29 02:01:32 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:01:44 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:44 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:44 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:44 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:01:44 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:01:44 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:01:44 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@164125ac]
-2024-12-29 02:01:44 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:01:49 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/unlink_patient/6/1
-2024-12-29 02:01:49 DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/doctors/unlink_patient/6/1
-2024-12-29 02:01:50 DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/doctors/unlink_patient/6/1
-2024-12-29 02:01:50 DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/doctors/unlink_patient/6/1", parameters={}
-2024-12-29 02:01:50 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#unlikPatient(Long, Long)
-2024-12-29 02:01:50 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:01:50 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@58ad1dd1]
-2024-12-29 02:01:50 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:01:50 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:50 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:50 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:50 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:01:50 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:01:50 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:01:50 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@ef3e191]
-2024-12-29 02:01:50 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:01:57 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:57 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:57 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:01:57 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:01:57 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:01:58 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:01:58 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@6b8b12f9]
-2024-12-29 02:01:58 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:02:45 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:02:45 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:02:45 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:02:45 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:02:45 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:02:45 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:02:45 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@927242]
-2024-12-29 02:02:45 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:02:47 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:02:48 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:02:48 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:02:48 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:02:48 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:02:48 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@27cbdd4]
-2024-12-29 02:02:48 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:03:03 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:03 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:03 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:03 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:03:03 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:03:04 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:03:04 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@7207d716]
-2024-12-29 02:03:04 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:03:11 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/unlink_patient/6/1
-2024-12-29 02:03:11 DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/doctors/unlink_patient/6/1
-2024-12-29 02:03:11 DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/doctors/unlink_patient/6/1
-2024-12-29 02:03:11 DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/doctors/unlink_patient/6/1", parameters={}
-2024-12-29 02:03:11 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#unlikPatient(Long, Long)
-2024-12-29 02:03:11 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:03:11 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@26f160c8]
-2024-12-29 02:03:11 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:03:11 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:11 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:12 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:12 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:03:12 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:03:12 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:03:12 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@429fd971]
-2024-12-29 02:03:12 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:03:23 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:23 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:23 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:23 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:03:23 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:03:24 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:03:24 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@657620d8]
-2024-12-29 02:03:24 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:03:39 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:39 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:40 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:40 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:03:40 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:03:40 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:03:40 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@34753065]
-2024-12-29 02:03:40 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:03:41 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:42 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:42 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:03:42 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:03:42 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:03:42 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@1b6091d6]
-2024-12-29 02:03:42 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:03:50 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:50 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:51 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:51 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:03:51 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:03:51 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:03:51 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@4494b3d9]
-2024-12-29 02:03:51 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:03:55 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/unlink_patient/6/1
-2024-12-29 02:03:55 DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/doctors/unlink_patient/6/1
-2024-12-29 02:03:55 DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/doctors/unlink_patient/6/1
-2024-12-29 02:03:55 DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/doctors/unlink_patient/6/1", parameters={}
-2024-12-29 02:03:55 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#unlikPatient(Long, Long)
-2024-12-29 02:03:55 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:03:55 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@245e9c79]
-2024-12-29 02:03:55 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:03:55 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:55 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:03:55 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:03:55 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:03:56 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:03:56 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@498e9bef]
-2024-12-29 02:03:56 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:04:04 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:04 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:04 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:04 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:04:04 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:04:04 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:04:04 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@4cf21e9]
-2024-12-29 02:04:04 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:04:23 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:23 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:23 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:23 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:04:23 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:04:23 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:04:23 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@7b00206f]
-2024-12-29 02:04:23 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:04:25 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:25 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:25 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:04:25 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:04:25 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:04:25 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@709c28a3]
-2024-12-29 02:04:25 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:04:33 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:33 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:34 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:34 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:04:34 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:04:34 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:04:34 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@15f5d335]
-2024-12-29 02:04:34 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:04:37 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/unlink_patient/6/1
-2024-12-29 02:04:37 DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/doctors/unlink_patient/6/1
-2024-12-29 02:04:38 DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/doctors/unlink_patient/6/1
-2024-12-29 02:04:38 DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/doctors/unlink_patient/6/1", parameters={}
-2024-12-29 02:04:38 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#unlikPatient(Long, Long)
-2024-12-29 02:04:38 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:04:38 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@65b661a9]
-2024-12-29 02:04:38 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:04:38 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:38 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:38 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:04:38 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:04:38 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:04:38 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@1960ff17]
-2024-12-29 02:04:38 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:04:43 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/unlink_patient/1/1
-2024-12-29 02:04:43 DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/doctors/unlink_patient/1/1
-2024-12-29 02:04:43 DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/doctors/unlink_patient/1/1
-2024-12-29 02:04:43 DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/doctors/unlink_patient/1/1", parameters={}
-2024-12-29 02:04:43 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#unlikPatient(Long, Long)
-2024-12-29 02:04:44 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:04:44 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@50802e4d]
-2024-12-29 02:04:44 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:04:44 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:44 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:44 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:44 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:04:44 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:04:44 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:04:44 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@261339ef]
-2024-12-29 02:04:44 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:04:59 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:59 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:59 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:04:59 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:04:59 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:04:59 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:04:59 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@6ef35c10]
-2024-12-29 02:04:59 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:05:14 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:05:14 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:05:14 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:05:14 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:05:14 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:05:15 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:05:15 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@19aa9a91]
-2024-12-29 02:05:15 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:05:19 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:05:19 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:05:20 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:05:20 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:05:20 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:05:20 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:05:20 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@191440f0]
-2024-12-29 02:05:20 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:05:24 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/doctors/unlink_patient/6/1
-2024-12-29 02:05:24 DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/doctors/unlink_patient/6/1
-2024-12-29 02:05:24 DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/doctors/unlink_patient/6/1
-2024-12-29 02:05:24 DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/doctors/unlink_patient/6/1", parameters={}
-2024-12-29 02:05:24 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DoctorController#unlikPatient(Long, Long)
-2024-12-29 02:05:24 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:05:24 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@d33fedf]
-2024-12-29 02:05:24 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:05:24 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:05:24 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:05:24 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:05:24 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:05:24 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:05:25 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:05:25 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@9afa17]
-2024-12-29 02:05:25 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:05:35 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:05:35 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:05:35 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/patients/patients_by_doctor?doctorId=1&page=0&size=5
-2024-12-29 02:05:35 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/patients/patients_by_doctor?doctorId=1&page=0&size=5", parameters={masked}
-2024-12-29 02:05:35 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.PatientController#getPacientesByDoctor(String, String, Character, Long, int, int)
-2024-12-29 02:05:35 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:05:35 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@32907617]
-2024-12-29 02:05:35 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:05:39 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/user_roles
-2024-12-29 02:05:39 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/user_roles
-2024-12-29 02:05:39 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2024-12-29 02:05:39 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/user_roles
-2024-12-29 02:05:39 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/user_roles", parameters={}
-2024-12-29 02:05:39 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.UserRolesController#getUserRoles(LoginUserDto)
-2024-12-29 02:05:39 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.proyecto_citas_medicas.dtos.LoginUserDto@2d6d9431]
-2024-12-29 02:05:40 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:05:40 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@4c3a33fd]
-2024-12-29 02:05:40 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:05:42 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
-2024-12-29 02:05:42 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
-2024-12-29 02:05:42 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2024-12-29 02:05:42 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
-2024-12-29 02:05:42 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/login", parameters={}
-2024-12-29 02:05:42 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#authenticate(LoginUserDto)
-2024-12-29 02:05:42 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.proyecto_citas_medicas.dtos.LoginUserDto@67363d4]
-2024-12-29 02:05:42 DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
-2024-12-29 02:05:43 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:05:43 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@382e45b7]
-2024-12-29 02:05:43 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:05:51 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/user_roles
-2024-12-29 02:05:51 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/user_roles
-2024-12-29 02:05:51 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2024-12-29 02:05:51 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/user_roles
-2024-12-29 02:05:51 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/user_roles", parameters={}
-2024-12-29 02:05:51 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.UserRolesController#getUserRoles(LoginUserDto)
-2024-12-29 02:05:51 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.proyecto_citas_medicas.dtos.LoginUserDto@5b04d1ea]
-2024-12-29 02:05:51 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 02:05:51 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@595371ed]
-2024-12-29 02:05:51 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 02:06:34 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-12-29 02:06:34 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2024-12-29 02:06:34 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2024-12-29 14:59:01 INFO  c.e.p.ProyectoCitasMedicasApplication - Starting ProyectoCitasMedicasApplication using Java 22.0.2 with PID 21924 (C:\Users\Eduardo\proyectos\medical_office\medical_office_backend\build\classes\java\main started by RØNALD in C:\Users\Eduardo\proyectos\medical_office\medical_office_backend)
-2024-12-29 14:59:01 INFO  c.e.p.ProyectoCitasMedicasApplication - No active profile set, falling back to 1 default profile: "default"
-2024-12-29 14:59:01 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-12-29 14:59:01 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.AppointmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.DoctorPatientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.DoctorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.MedicationLaboratoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.MedicationRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.PatientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.PermissionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.RoleRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.SpecialityRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UserRolesRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.proyecto_citas_medicas.repository.UserTokensRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 JDBC repository interfaces.
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-12-29 14:59:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 12 JPA repository interfaces.
-2024-12-29 14:59:02 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-12-29 14:59:02 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2024-12-29 14:59:02 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2024-12-29 14:59:02 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
-2024-12-29 14:59:02 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2024-12-29 14:59:02 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-12-29 14:59:02 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2024-12-29 14:59:02 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1213 ms
-2024-12-29 14:59:02 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2024-12-29 14:59:04 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@550aeb5f
-2024-12-29 14:59:04 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2024-12-29 14:59:04 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-12-29 14:59:04 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-12-29 14:59:04 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2024-12-29 14:59:04 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-12-29 14:59:05 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-12-29 14:59:05 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-12-29 14:59:05 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-12-29 14:59:06 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-12-29 14:59:06 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-12-29 14:59:06 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 0 ResponseBodyAdvice
-2024-12-29 14:59:06 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-12-29 14:59:06 WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-12-29 14:59:06 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 20 mappings in 'requestMappingHandlerMapping'
-2024-12-29 14:59:06 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-12-29 14:59:06 DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
-2024-12-29 14:59:06 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-12-29 14:59:06 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2024-12-29 14:59:06 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
-2024-12-29 14:59:06 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
-2024-12-29 14:59:06 INFO  c.e.p.ProyectoCitasMedicasApplication - Started ProyectoCitasMedicasApplication in 6.119 seconds (process running for 6.467)
-2024-12-29 15:31:07 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-12-29 15:31:07 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2024-12-29 15:31:07 DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
-2024-12-29 15:31:07 DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
-2024-12-29 15:31:07 DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
-2024-12-29 15:31:07 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@208eefba
-2024-12-29 15:31:07 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@2c9f296a
-2024-12-29 15:31:07 DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2024-12-29 15:31:07 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
-2024-12-29 15:31:07 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/user_roles
-2024-12-29 15:31:07 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/user_roles
-2024-12-29 15:31:07 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2024-12-29 15:31:07 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/user_roles
-2024-12-29 15:31:07 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/user_roles", parameters={}
-2024-12-29 15:31:07 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.UserRolesController#getUserRoles(LoginUserDto)
-2024-12-29 15:31:07 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.proyecto_citas_medicas.dtos.LoginUserDto@5fc65e15]
-2024-12-29 15:31:08 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 15:31:08 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@5b03bf42]
-2024-12-29 15:31:08 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2024-12-29 15:31:19 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
-2024-12-29 15:31:19 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
-2024-12-29 15:31:19 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2024-12-29 15:31:19 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
-2024-12-29 15:31:19 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/login", parameters={}
-2024-12-29 15:31:19 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#authenticate(LoginUserDto)
-2024-12-29 15:31:19 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.proyecto_citas_medicas.dtos.LoginUserDto@38d1a6ce]
-2024-12-29 15:31:20 DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
-2024-12-29 15:31:21 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2024-12-29 15:31:21 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@16261167]
-2024-12-29 15:31:21 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-12-16 22:57:04 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-16 22:57:04 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-16 22:57:04 DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-12-16 22:57:04 DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-12-16 22:57:04 DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-12-16 22:57:04 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@38fb316f
+2025-12-16 22:57:04 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@698be132
+2025-12-16 22:57:04 DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-12-16 22:57:04 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-12-16 22:57:04 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/user_roles
+2025-12-16 22:57:04 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/user_roles
+2025-12-16 22:57:04 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-12-16 22:57:04 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/user_roles
+2025-12-16 22:57:04 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/user_roles", parameters={}
+2025-12-16 22:57:04 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.UserRolesController#getUserRoles(LoginUserDto)
+2025-12-16 22:57:04 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.proyecto_citas_medicas.dtos.LoginUserDto@7ef4dbe1]
+2025-12-16 22:57:06 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-12-16 22:57:06 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@463ce57d]
+2025-12-16 22:57:06 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-12-16 22:57:08 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
+2025-12-16 22:57:08 DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-12-16 22:57:08 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-12-16 22:57:08 DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-12-16 22:57:08 DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/auth/login", parameters={}
+2025-12-16 22:57:08 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.AuthenticationController#authenticate(LoginUserDto)
+2025-12-16 22:57:08 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.example.proyecto_citas_medicas.dtos.LoginUserDto@7e1cb4f0]
+2025-12-16 22:57:09 DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-12-16 22:57:10 WARN  c.zaxxer.hikari.pool.ProxyLeakTask - Connection leak detection triggered for org.postgresql.jdbc.PgConnection@7051c13d on thread http-nio-8081-exec-4, stack trace follows
+java.lang.Exception: Apparent connection leak detected
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:127)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:46)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.connection(StatementPreparerImpl.java:54)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:153)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:183)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:155)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.lambda$list$0(JdbcSelectExecutor.java:85)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:231)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:167)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:265)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:145)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:67)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:204)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:211)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$2(ConcreteSqmSelectQueryPlan.java:139)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:382)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:302)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:526)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:423)
+	at org.hibernate.query.spi.AbstractSelectionQuery.getSingleResult(AbstractSelectionQuery.java:555)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:223)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:92)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:152)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:140)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy4/jdk.proxy4.$Proxy144.findByEmail(Unknown Source)
+	at com.example.proyecto_citas_medicas.config.ApplicationConfiguration.lambda$userDetailsService$1(ApplicationConfiguration.java:24)
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:107)
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:133)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182)
+	at com.example.proyecto_citas_medicas.service.AuthenticationService.authenticate(AuthenticationService.java:42)
+	at com.example.proyecto_citas_medicas.controller.AuthenticationController.authenticate(AuthenticationController.java:78)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.example.proyecto_citas_medicas.security.JwtAuthorizationFilter.doFilterInternal(JwtAuthorizationFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.example.proyecto_citas_medicas.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:47)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2025-12-16 22:57:11 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-12-16 22:57:11 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@5c9f133c]
+2025-12-16 22:57:11 INFO  c.zaxxer.hikari.pool.ProxyLeakTask - Previously reported leaked connection org.postgresql.jdbc.PgConnection@7051c13d on thread http-nio-8081-exec-4 was returned to the pool (unleaked)
+2025-12-16 22:57:11 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-12-16 22:58:27 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/medications/medications_by_name?page=0&size=5
+2025-12-16 22:58:27 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/medications/medications_by_name?page=0&size=5
+2025-12-16 22:58:28 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/medications/medications_by_name?page=0&size=5
+2025-12-16 22:58:28 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/medications/medications_by_name?page=0&size=5", parameters={masked}
+2025-12-16 22:58:28 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.MedicationController#getMedicationsByName(String, int, int)
+2025-12-16 22:58:30 WARN  c.zaxxer.hikari.pool.ProxyLeakTask - Connection leak detection triggered for org.postgresql.jdbc.PgConnection@7051c13d on thread http-nio-8081-exec-7, stack trace follows
+java.lang.Exception: Apparent connection leak detected
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:127)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:46)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.beginTransaction(HibernateJpaDialect.java:164)
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:420)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.startTransaction(AbstractPlatformTransactionManager.java:532)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:405)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:604)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:373)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy4/jdk.proxy4.$Proxy149.findAll(Unknown Source)
+	at com.example.proyecto_citas_medicas.service.MedicationService.getMedicationsByName(MedicationService.java:34)
+	at com.example.proyecto_citas_medicas.controller.MedicationController.getMedicationsByName(MedicationController.java:31)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.example.proyecto_citas_medicas.security.JwtAuthorizationFilter.doFilterInternal(JwtAuthorizationFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.example.proyecto_citas_medicas.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:72)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2025-12-16 22:58:30 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-12-16 22:58:30 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@a127070]
+2025-12-16 22:58:30 INFO  c.zaxxer.hikari.pool.ProxyLeakTask - Previously reported leaked connection org.postgresql.jdbc.PgConnection@7051c13d on thread http-nio-8081-exec-7 was returned to the pool (unleaked)
+2025-12-16 22:58:30 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
