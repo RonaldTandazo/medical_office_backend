@@ -1,0 +1,25 @@
+2025-12-23 11:45:24 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-23 11:45:24 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-23 11:45:24 DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-12-23 11:45:24 DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-12-23 11:45:24 DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-12-23 11:45:24 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2cbf5bc1
+2025-12-23 11:45:24 DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@565a1ba3
+2025-12-23 11:45:24 DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-12-23 11:45:24 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-12-23 11:45:24 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/dashboard/info
+2025-12-23 11:45:24 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/dashboard/info
+2025-12-23 11:45:24 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/dashboard/info
+2025-12-23 11:45:24 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/dashboard/info", parameters={}
+2025-12-23 11:45:24 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DashboardController#getDashboardInfo()
+2025-12-23 11:45:25 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-12-23 11:45:25 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@72365162]
+2025-12-23 11:45:25 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-12-23 11:45:29 DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/dashboard/info
+2025-12-23 11:45:29 DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/dashboard/info
+2025-12-23 11:45:29 DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/dashboard/info
+2025-12-23 11:45:29 DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/dashboard/info", parameters={}
+2025-12-23 11:45:29 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.proyecto_citas_medicas.controller.DashboardController#getDashboardInfo()
+2025-12-23 11:45:30 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-12-23 11:45:30 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.example.proyecto_citas_medicas.entities.ApiResponse@38849bf6]
+2025-12-23 11:45:30 DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
