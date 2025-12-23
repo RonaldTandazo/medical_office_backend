@@ -121,10 +121,10 @@ public class AuthenticationController {
         try{
             User verifyUser = userService.verifyUser(user.getEmail());
             if(verifyUser != null){
-                return ResponseEntity.ok(new ApiResponse(false, "This E-mail is already in use", null, HttpStatus.FOUND.value()));
+                return ResponseEntity.ok(new ApiResponse(false, "Este E-mail ya está en uso", null, HttpStatus.FOUND.value()));
             }
 
-            return ResponseEntity.ok(new ApiResponse(true, "Can use this E-mail", null, HttpStatus.OK.value()));
+            return ResponseEntity.ok(new ApiResponse(true, "E-mail Válido", null, HttpStatus.OK.value()));
         }catch(Exception e){
             String className = this.getClass().getName();
             String methodName = new Throwable().getStackTrace()[0].getMethodName();

@@ -70,18 +70,9 @@ public class UserService {
     } 
 
     public User verifyUser(String email) {
-        Optional<User> user = userRepository.findByEmail(email);
-        
-        if (user.isEmpty()) {
-            throw new NoSuchElementException("User not found");
-        }
-    
-        User existingUser = user.get();
-        if (existingUser.getStatus() != 'A') {
-            throw new IllegalStateException("User is not active");
-        }
-    
-        return existingUser;
+        return userRepository.findByEmail(email)
+            .filter(u -> u.getStatus() == 'A')
+            .orElse(null);
     }
 
     public User updatePassword(Long user_id, String new_password){

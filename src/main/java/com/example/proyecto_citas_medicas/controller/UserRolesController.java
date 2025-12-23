@@ -30,7 +30,6 @@ public class UserRolesController {
     @PostMapping("user_roles")
     public ResponseEntity<ApiResponse> getUserRoles(@RequestBody LoginUserDto loginUserDto) {
         try {
-            logger.info("eeejejejejejejeje");
             User verifyUser = userService.verifyUser(loginUserDto.getEmail());
             List<Map<String, Object>> userRoles = userRoleSerive.getUserRoles(verifyUser.getUserId());
             if (userRoles.isEmpty()) {
