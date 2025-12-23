@@ -32,13 +32,20 @@ public class SecurityConfiguration {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .csrf(csrf -> csrf.disable())
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .authorizeHttpRequests(auth -> auth
-                    .requestMatchers("/api/auth/**", "/api/user_roles").permitAll()
-                    .anyRequest().authenticated()
+                .requestMatchers(
+                    "/api/auth/**", 
+                    "/api/user_roles", 
+                    "/api/provider/download_template",
+                    "/api/provider/upload_medication"
+                )
+                .permitAll()
+                .anyRequest()
+                .authenticated()
             )
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authenticationProvider(authenticationProvider)

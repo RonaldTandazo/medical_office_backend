@@ -6,13 +6,12 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.example.proyecto_citas_medicas.entities.User;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Long>, JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
+public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
     Optional<User> findByEmail(String email);
 
     @Query(value = "Update users set password = :new_password where user_id = :user_id and status = 'A' Returning user_id, username, email, password, status", nativeQuery = true)
