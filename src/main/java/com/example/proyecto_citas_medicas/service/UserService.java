@@ -78,8 +78,8 @@ public class UserService {
             .orElse(null);
     }
 
-    public User updatePassword(Long user_id, String new_password){
-        return userRepository.updatePassword(user_id, new_password);
+    public boolean updatePassword(Long user_id, String new_password){
+        return userRepository.updateUserPassword(user_id, new_password) > 0;
     }
 
     public User updateUserInformation(User user){

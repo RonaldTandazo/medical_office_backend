@@ -155,7 +155,7 @@ public class AuthenticationController {
                 info = userTokensService.updateItem(find_item.getUserTokenId(), token);
             }
 
-            return ResponseEntity.ok(new ApiResponse(true, "Recover Password Email Send", info, HttpStatus.OK.value()));
+            return ResponseEntity.ok(new ApiResponse(true, "Correo de Restalecer Contraseña Enviado", info, HttpStatus.OK.value()));
         } catch (Exception e) {
             String className = this.getClass().getName();
             String methodName = new Throwable().getStackTrace()[0].getMethodName();
@@ -170,20 +170,20 @@ public class AuthenticationController {
         try {
             UserTokens userToken = userTokensService.findItemByToken(token);
             if (userToken == null) {
-                return ResponseEntity.ok(new ApiResponse(false, "Expired Link", null, HttpStatus.NOT_FOUND.value()));
+                return ResponseEntity.ok(new ApiResponse(false, "Link Expirado", null, HttpStatus.NOT_FOUND.value()));
             }
             
             Long user_token_id = userToken.getUserTokenId();
             String password_crypted = bcryptEncoder.encode(request.getNewPassword());
-            User updatePassword = userService.updatePassword(userToken.getUserId(), password_crypted);
+            boolean update = userService.updatePassword(userToken.getUserId(), password_crypted);
 
-            if(updatePassword == null){
-                return ResponseEntity.ok(new ApiResponse(false, "Password can`t be Reset", null, HttpStatus.NOT_MODIFIED.value()));
+            if(!update){
+                return ResponseEntity.ok(new ApiResponse(false, "No Se puede restablecer la contraseña", null, HttpStatus.NOT_MODIFIED.value()));
             }
 
             userTokensService.updateItem(user_token_id, null);
 
-            return ResponseEntity.ok(new ApiResponse(true, "Password Reset", null, HttpStatus.OK.value()));
+            return ResponseEntity.ok(new ApiResponse(true, "Contraseña Restablecida", null, HttpStatus.OK.value()));
         } catch (Exception e) {
             String className = this.getClass().getName();
             String methodName = new Throwable().getStackTrace()[0].getMethodName();

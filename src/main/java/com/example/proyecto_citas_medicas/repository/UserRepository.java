@@ -3,19 +3,24 @@ package com.example.proyecto_citas_medicas.repository;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.example.proyecto_citas_medicas.entities.User;
+import jakarta.transaction.Transactional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
     Optional<User> findByEmail(String email);
 
-    @Query(value = "Update users set password = :new_password where user_id = :user_id and status = 'A' Returning user_id, username, email, password, status", nativeQuery = true)
-    User updatePassword(@Param("user_id") Long user_id, @Param("new_password") String new_password);
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE users SET password = :new_password WHERE user_id = :user_id AND status = 'A'", nativeQuery = true)
+    int updateUserPassword(@Param("user_id") Long user_id, @Param("new_password") String new_password);
 
     @Query(value = "UPDATE users SET username = :username, identification = :identification, gender = :gender, "
         + "age = :age, phonenumber = :phonenumber "
