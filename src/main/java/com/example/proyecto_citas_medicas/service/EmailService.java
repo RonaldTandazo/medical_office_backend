@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,14 +16,18 @@ public class EmailService {
 
     @Autowired
     private final JavaMailSender mailSender;
-    
+
     @Value("${frontend.reset-password.url}")
     private String resetPasswordUrl;
+
+    @Value("${spring.mail.username}")
+    private String mailFrom;
 
     public EmailService(JavaMailSender mailSender) {
         this.mailSender = mailSender;
     }
 
+    @Async
     public void sendPasswordResetEmail(String to, String token) {
         try {
             SimpleMailMessage mailMessage = new SimpleMailMessage();
