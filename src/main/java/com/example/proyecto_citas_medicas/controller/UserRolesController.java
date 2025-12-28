@@ -31,9 +31,13 @@ public class UserRolesController {
     public ResponseEntity<ApiResponse> getUserRoles(@RequestBody LoginUserDto loginUserDto) {
         try {
             User verifyUser = userService.verifyUser(loginUserDto.getEmail());
+            if (verifyUser == null) {
+                return ResponseEntity.ok(new ApiResponse(false, "Usuario No Encontrado", null, HttpStatus.NOT_FOUND.value()));
+            }
+
             List<Map<String, Object>> userRoles = userRoleSerive.getUserRoles(verifyUser.getUserId());
             if (userRoles.isEmpty()) {
-                return ResponseEntity.ok(new ApiResponse(false, "No roles found", null, HttpStatus.NOT_FOUND.value()));
+                return ResponseEntity.ok(new ApiResponse(false, "No se Encontraron Roles para este Usuario", null, HttpStatus.NOT_FOUND.value()));
             }
 
             return ResponseEntity.ok(new ApiResponse(true, "User Found", userRoles, HttpStatus.OK.value()));

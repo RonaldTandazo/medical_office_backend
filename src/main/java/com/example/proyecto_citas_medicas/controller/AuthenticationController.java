@@ -7,6 +7,7 @@ import com.example.proyecto_citas_medicas.dtos.RegisterUserDto;
 import com.example.proyecto_citas_medicas.entities.ApiResponse;
 import com.example.proyecto_citas_medicas.entities.Doctor;
 import com.example.proyecto_citas_medicas.entities.User;
+import com.example.proyecto_citas_medicas.entities.UserRoles;
 import com.example.proyecto_citas_medicas.entities.UserTokens;
 import com.example.proyecto_citas_medicas.service.AuthenticationService;
 import com.example.proyecto_citas_medicas.service.DoctorService;
@@ -59,6 +60,7 @@ public class AuthenticationController {
     public ResponseEntity<ApiResponse> register(@RequestBody RegisterUserDto registerUserDto) {
         try{
             User registeredUser = authenticationService.signup(registerUserDto);
+            authenticationService.setUserRole(registeredUser);
             
             return ResponseEntity.ok(new ApiResponse(true, "Signed Up Successfully", registeredUser, HttpStatus.OK.value()));
         }catch(Exception e){
